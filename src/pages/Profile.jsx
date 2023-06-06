@@ -4,8 +4,9 @@ import { Sidebar } from "../components"
 function Profile() {
   return (
     <>
-      <div className='mr-10'>
+      <div className='flex gap-10'>
         <Sidebar />
+        YOUR DETAILS
       </div>
     </>
   )

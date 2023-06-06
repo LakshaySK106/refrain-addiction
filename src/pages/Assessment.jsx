@@ -4,8 +4,9 @@ import { Sidebar } from "../components"
 function Assessment() {
   return (
     <>
-      <div className='mr-10'>
+      <div className='flex gap-10'>
         <Sidebar />
+        TAKE A QUIZ NOW
       </div>
     </>
   )

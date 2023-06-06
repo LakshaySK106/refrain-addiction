@@ -4,8 +4,9 @@ import { Sidebar } from "../components"
 function Book() {
   return (
     <>
-      <div className='mr-10'>
+      <div className='flex gap-10'>
         <Sidebar />
+        BOOK A NEW APPOINTMENT?
       </div>
     </>
   )

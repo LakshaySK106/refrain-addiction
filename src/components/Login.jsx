@@ -37,15 +37,15 @@ function Login() {
     }
 
     return (
-        <div className="">
+        <div className="flex align-middle h-96">
 
             <h1>Login</h1>
 
-            <form action="POST">
-                <input type="email" onChange={(e) => { setEmail(e.target.value) }} placeholder="Email"  />
-                <input type="password" onChange={(e) => { setPassword(e.target.value) }} placeholder="Password"  />
-                <input type="submit" onClick={submit} />
-            </form>
+                <form action="POST">
+                    <input type="email" onChange={(e) => { setEmail(e.target.value) }} placeholder="Email"  />
+                    <input type="password" onChange={(e) => { setPassword(e.target.value) }} placeholder="Password"  />
+                    <input type="submit" onClick={submit} />
+                </form>
 
             <br />
             <p>OR</p>
