@@ -4,7 +4,7 @@ import { useState } from 'react'
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator } from '@chatscope/chat-ui-kit-react';
 
-const API_KEY = "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";
+const API_KEY = "";
 
 const systemMessage = {
   "role": "system", "content": "Explain things like you're talking to a software professional with 2 years of experience."
@@ -80,10 +80,10 @@ function Chat() {
   return (
     <>
       <div className='flex'>
-        <div className=' '>
+        <div className='h-screen sticky top-0'>
           < Sidebar />
         </div>
-        <div style={{ position:"relative", height:"full" , width: "800px", paddingTop:"4px", marginLeft:"200px"  }}>
+        <div style={{ position:"relative", height:"full" , width: "800px", paddingTop:"4px", margin:"auto"  }}>
           <MainContainer>
             <ChatContainer>       
               <MessageList 

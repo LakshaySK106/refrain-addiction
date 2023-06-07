@@ -25,11 +25,12 @@ app.post("/", async (req, res) => {
 });
 
 app.post("/register", async (req, res) => {
-  const {name, email, password } = req.body;
+  const {name, email, city, password } = req.body;
 
   const data = {
     name: name,
     email: email,
+    city: city,
     password: password,
   };
 
