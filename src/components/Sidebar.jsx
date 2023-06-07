@@ -146,7 +146,7 @@ const Sidebar = () => {
             )}
 
             <li className="hover:text-blue-600 hover:font-medium">
-              <NavLink to={"/"} className="link">
+              <NavLink to={"/"} className="link" >
                 <RiLogoutBoxLine size={23} className="min-w-max" />
                 Logout
               </NavLink>

@@ -78,8 +78,8 @@ function Register() {
                         or
                     </div>
 
-                    <div className="mb-6 mt-3 hover:underline">
-                        <Link to="/login">Registered User? Login</Link>
+                    <div className="mb-6 mt-3 hover:underline hover:text-blue-500">
+                        <Link to="/login">Already registered? Login</Link>
                     </div>
                 </div>
             </div>

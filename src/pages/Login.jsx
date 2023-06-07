@@ -23,7 +23,7 @@ function Login() {
                     history("/home",{state:{id:email}})
                 }
                 else if(res.data==="notexist"){
-                    alert("User isn't registered!")
+                    alert("Invalid Credentials!")
                 }
             })
             .catch(e=>{
@@ -37,7 +37,7 @@ function Login() {
     }
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen py-2">
+        <div className="flex flex-col items-center justify-center min-h-screen">
             <div className="flex flex-col items-center justify-center w-full h-full flex-1 text-center">
 
             <div className="bg-white items-center justify-center rounded-2xl shadow-2xl flex w-2/5 max-w-4xl">
@@ -68,9 +68,15 @@ function Login() {
                         or
                     </div>
 
-                    <div className="mb-6 mt-3 hover:underline">
+                    <div className="mb-4 mt-2 hover:underline hover:text-blue-500">
                         <Link to="/register">New User? Register</Link>
+                        
                     </div>
+                    <div className="mb-6 ">
+                       <Link className="hover:underline text-blue-500 hover:text-blue-900" to="/">Click here </Link>
+                        to return to the Home page
+                    </div>
+                    
                 </div>
             </div>
 

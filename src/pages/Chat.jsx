@@ -16,7 +16,7 @@ function Chat() {
     {
       message: "Hello, I'm your Partner! Ask me anything!",
       sentTime: "just now",
-      sender: "ChatGPT"
+      sender: "Partner"
     }
   ]);
   const [isTyping, setIsTyping] = useState(false);
@@ -39,7 +39,7 @@ function Chat() {
   async function processMessageToChatGPT(chatMessages) {
     let apiMessages = chatMessages.map((messageObject) => {
       let role = "";
-      if (messageObject.sender === "ChatGPT") {
+      if (messageObject.sender === "Partner") {
         role = "assistant";
       } else {
         role = "user";
@@ -69,13 +69,11 @@ function Chat() {
       console.log(data);
       setMessages([...chatMessages, {
         message: data.choices[0].message.content,
-        sender: "ChatGPT"
+        sender: "Partner"
       }]);
       setIsTyping(false);
     });
   }
-
-
 
   return (
     <>
@@ -83,7 +81,7 @@ function Chat() {
         <div className='h-screen sticky top-0'>
           < Sidebar />
         </div>
-        <div style={{ position:"relative", height:"full" , width: "800px", paddingTop:"4px", margin:"auto"  }}>
+        <div style={{ position:"relative" , width: "800px", paddingTop:"4px", margin:"auto"  }} className='h-screen ' >
           <MainContainer>
             <ChatContainer>       
               <MessageList 
