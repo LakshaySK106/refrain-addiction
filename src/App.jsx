@@ -1,7 +1,6 @@
 import React from 'react'
 import { Route, Routes } from "react-router-dom";
-import { Home, Assessment, Track, Chat, Profile, Landing, Book, Check } from './pages';
-import { Register } from './components';
+import { Home, Assessment, Track, Chat, Profile, Landing, Book, Check, Login, Register } from './pages';
 
 function App() {
   return (
@@ -16,6 +15,7 @@ function App() {
           <Route path="/Appointment/new" element={<Book />} />
           <Route path="/Appointment/past" element={<Check />} />
           <Route path="/register" element={<Register/>} />
+          <Route path="/login" element={<Login/>} />
        </Routes>
     </div>
   )

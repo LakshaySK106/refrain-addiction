@@ -1,14 +1,12 @@
 import React from 'react'
-import { Login, Navbar } from '../components'
+import { Navbar } from '../components'
 
 function Landing() {
   return (
     <>
       <div>
           <Navbar />
-      </div>
-      <div className="">
-         <Login />
+          Landing Page
       </div>
     </>
   )
