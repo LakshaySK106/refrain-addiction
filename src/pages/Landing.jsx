@@ -24,8 +24,10 @@ function Landing() {
               <label htmlFor="drop" className="toggle mt-lg-0 mt-1"><span className="fa fa-bars" aria-hidden="true" /></label>
               <input type="checkbox" id="drop" />
               <ul className="menu">
-                <li className="active"><a href="index.html">Home</a></li>
-                <li><a href="about.html">About </a></li>
+                <li className="">
+                  <Link to="/">Home</Link>
+                  </li>
+                <li><a href="#">About </a></li>
                 <li>
                   {/* First Tier Drop Down */}
                   <label htmlFor="drop-2" className="toggle">Dropdown <span className="fa fa-angle-down" aria-hidden="true" /> </label>
@@ -37,8 +39,8 @@ function Landing() {
                     <li><a href="#test">Reviews</a></li>
                   </ul>
                 </li>
-                <li><a href="gallery.html">Departments</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="#">Departments</a></li>
+                <li><a href="#">Contact Us</a></li>
                 <li className="icons">
                   <a href="#" className="face-bk"><span className="fa fa-facebook" aria-hidden="true" /></a></li>
                 <li className="icons"><a href="#" className="twitter"><span className="fa fa-twitter" aria-hidden="true" /></a></li>
@@ -66,8 +68,6 @@ function Landing() {
                     <div className="banner-w3layouts-inner">
                       <h3>We care and protect <span>your </span> health.</h3>
                       <h4>We will help to find health, to everyone.</h4>
-                      
-                      
                       <Link className="read btn mt-3" to="/login">Start a New Life</Link>
                     </div>
                   </div>
@@ -83,7 +83,7 @@ function Landing() {
                     <div className="banner-w3layouts-inner">
                       <h3>We do our best for you and <span>your </span> health.</h3>
                       <h4>We will help to find health, to everyone.</h4>
-                      <a href="single.html" className="read btn mt-3">Start a New Life</a>
+                      <Link className="read btn mt-3" to="/login">Start a New Life</Link>
                     </div>
                   </div>
                 </div>
@@ -98,7 +98,7 @@ function Landing() {
                     <div className="banner-w3layouts-inner">
                       <h3>We care and protect <span>your </span> health.</h3>
                       <h4>We will help to find health, to everyone.</h4>
-                      <a href="single.html" className="read btn mt-3">Start a New Life</a>
+                      <Link className="read btn mt-3" to="/login">Start a New Life</Link>
                     </div>
                   </div>
                 </div>
@@ -113,7 +113,7 @@ function Landing() {
                     <div className="banner-w3layouts-inner">
                       <h3>We do our best for you and <span>your </span> health.</h3>
                       <h4>We will help to find health, to everyone.</h4>
-                      <a href="single.html" className="read btn mt-3">Start a New Life</a>
+                      <Link className="read btn mt-3" to="/login">Start a New Life</Link>
                     </div>
                   </div>
                 </div>
@@ -182,7 +182,7 @@ function Landing() {
                 <input placeholder="Contact Number" name="number" type="text" required />
                 <input placeholder="Address" type="text" required />
                 <input placeholder="Timing" type="text" required />
-                <button className="book-appo btn mt-3">Quick Appointment </button>
+                <button disabled className="book-appo btn mt-3">Quick Appointment </button>
               </div>
             </form>
           </div>
