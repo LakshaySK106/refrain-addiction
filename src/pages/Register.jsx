@@ -8,6 +8,7 @@ function Register() {
     const [email,setEmail]=useState('')
     const [name,setName]=useState('')
     const [city,setCity]=useState('')
+    const [college,setCollege]=useState('')
     const [password,setPassword]=useState('')
 
     async function submit(e){
@@ -15,7 +16,7 @@ function Register() {
 
         try{
             await axios.post("http://localhost:8000/register",{
-                name,email,city,password
+                name,email,city,college, password
             })
             .then(res=>{
                 if(res.data==="exist"){
@@ -61,6 +62,11 @@ function Register() {
                             <div className="m-4 w-1/2">
 
                                 <input type="text" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  onChange={(e) => { setCity(e.target.value) }} placeholder="City"  />
+                            </div>
+
+                            <div className="m-4 w-1/2">
+
+                                <input type="text" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  onChange={(e) => { setCollege(e.target.value) }} placeholder="School/College/Institution"  />
                             </div>
 
                             <div className="m-4 w-1/2">

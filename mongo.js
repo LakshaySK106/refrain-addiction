@@ -30,6 +30,10 @@ const newSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  college: {
+    type: String,
+    required: true,
+  },
   password: {
     type: String,
     required: true,
