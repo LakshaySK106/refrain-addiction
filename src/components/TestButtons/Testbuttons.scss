@@ -31,23 +31,23 @@ button:nth-child(n) {
 }
 
 /*youtube button*/
-button:nth-child(1) {
-    background: url(../../assets/youtube_color.png) no-repeat;
-    align-items: center;
-    justify-content: center;
-    background-size: 45px;
-    cursor: pointer;
-    border: none;
-}
+// button:nth-child(1) {
+//     background: url(../../assets/youtube_color.png) no-repeat;
+//     align-items: center;
+//     justify-content: center;
+//     background-size: 45px;
+//     cursor: pointer;
+//     border: none;
+// }
 
-button:nth-child(1):hover {
-    background: url(../../assets/youtube_white.png) no-repeat;
-    align-items: center;
-    justify-content: center;
-    background-size: 45px;
-    cursor: pointer;
-    border: none;
-}
+// button:nth-child(1):hover {
+//     background: url(../../assets/youtube_white.png) no-repeat;
+//     align-items: center;
+//     justify-content: center;
+//     background-size: 45px;
+//     cursor: pointer;
+//     border: none;
+// }
 
 #you {
     position: relative;

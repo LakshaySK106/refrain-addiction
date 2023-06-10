@@ -17,29 +17,15 @@ database.once("connected", () => {
   console.log("Database Connected!");
 });
 
-const newSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true,
-  },
-  email: {
-    type: String,
-    required: true,
-  },
-  city: {
-    type: String,
-    required: true,
-  },
-  college: {
-    type: String,
-    required: true,
-  },
-  password: {
-    type: String,
-    required: true,
+const dataSchema = new mongoose.Schema({
+  web_arr: {
+    type: Array,
+    items: {
+      type: String,
+    },
   },
 });
 
-const collection = mongoose.model("collection", newSchema);
+const coll = mongoose.model("coll", dataSchema);
 
-module.exports = collection; 
+module.exports = coll;
