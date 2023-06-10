@@ -39,7 +39,7 @@ function LoginC() {
         <div className="bg-white items-center justify-center rounded-2xl shadow-2xl flex w-2/5 max-w-4xl">
           <div className="w-full">
             <div className="text-3xl font-bold text-blue-500 mt-10">
-              Registered User Login
+              Registered Councilor Login
             </div>
 
             <form action="POST">

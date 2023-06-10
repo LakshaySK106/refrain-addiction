@@ -1,13 +1,53 @@
 require('dotenv').config();
 const express = require('express');
-const collection = require('./mongo');
+const { collection } = require('./mongo');
 const routes = require('./routes/routes');
 const cors = require('cors');
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
+const mongoose = require('mongoose');
+const mongoString = 'mongodb://localhost:27017/refrain-addiction';
+mongoose.connect(
+  `mongodb+srv://refrain-addiction:codetogivehack@cluster0.yzcnusv.mongodb.net/?retryWrites=true&w=majority`,
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  },
+);
+const database = mongoose.connection;
 
+database.on('error', (error) => {
+  console.log(error);
+});
+const consultantSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  email: {
+    type: String,
+    required: true,
+  },
+  Age: {
+    type: String,
+  },
+  speciality: {
+    type: String,
+    required: true,
+  },
+  password: {
+    type: String,
+    required: true,
+  },
+  isApproved: {
+    type: Boolean,
+    required: true,
+    default: false,
+  },
+});
+const Consultant = mongoose.model('consultant', consultantSchema);
 app.get('/', cors(), (req, res) => {});
 app.get('/consultant', cors(), (req, res) => {});
 
