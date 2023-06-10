@@ -28,7 +28,7 @@ const SubMenu = ({ data }) => {
                 height: 0,
               }
         }
-        className="flex h-0 flex-col pl-14 text-[0.8rem] font-normal overflow-hidden"
+        className="flex h-0 flex-col pl-14 text-[10.rem] font-normal overflow-hidden"
       >
         {data.path?.map((path) => (
           <li key={path} className="hover:text-blue-600 hover:font-medium">

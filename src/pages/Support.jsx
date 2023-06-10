@@ -4,8 +4,9 @@ import { FaComment, FaQuestionCircle } from 'react-icons/fa';
 
 function Support() {
   const showSiteBlocker = true;
-  const score = 75; 
-  
+  const min = 30;
+  const max = 80;
+  const score = Math.floor(Math.random() * (max - min) + min);
 
   return (
     <div className="flex flex-col justify-center items-center h-screen">
