@@ -42,4 +42,24 @@ const newSchema = new mongoose.Schema({
 
 const collection = mongoose.model("collection", newSchema);
 
-module.exports = collection;
+
+
+
+
+
+const dataSchema = new mongoose.Schema({
+  web_arr: {
+    type: Array,
+    items: {
+      type: String,
+    },
+  },
+});
+
+const coll = mongoose.model("coll", dataSchema);
+
+
+module.exports = {collection, coll};
+// module.exports = { collection };
+
+

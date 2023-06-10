@@ -1,6 +1,8 @@
-const express = require('express');
-const collection = require('./mongo');
-const cors = require('cors');
+require("dotenv").config();
+const express = require("express");
+const collection = require("./mongo");
+const routes = require("./routes/routes");
+const cors = require("cors");
 const app = express();
 const bcrypt = require('bcryptjs');
 app.use(express.json());
@@ -87,7 +89,7 @@ app.post('/consultant', async (req, res) => {
   }
 });
 
-app.post('/register', async (req, res) => {
+app.post("/register", async (req, res) => {
   const { name, email, city, college, password } = req.body;
 
   const data = {
@@ -168,6 +170,11 @@ app.post('/registerc', async (req, res) => {
 //     res.status(500).json({ message: 'Internal server error' });
 //   }
 // });
+app.use("/api/routes", routes);
+
+// if(process.env.NODE_ENV === 'production'){
+//   app.use(express.static('frontend/build'));
+// }
 
 app.listen(8000, () => {
   console.log('Port Connected!');

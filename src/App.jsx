@@ -1,17 +1,6 @@
-import React from 'react';
-import { Route, Routes } from 'react-router-dom';
-import {
-  Home,
-  Assessment,
-  Track,
-  Chat,
-  Profile,
-  Landing,
-  Book,
-  Check,
-  Login,
-  Register,
-} from './pages';
+import React from 'react'
+import { Route, Routes } from "react-router-dom";
+import { Home, Assessment, Track, Chat, Profile, Landing, Book, Check, Login, Register, Blockweb } from './pages';
 import Consultant from './pages/Consultant';
 import Loginc from './pages/Loginc';
 import Registerc from './pages/Registerc';
