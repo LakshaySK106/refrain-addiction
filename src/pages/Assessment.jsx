@@ -1,8 +1,24 @@
 import React from 'react'
 import { Sidebar } from "../components"
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios"
+import { useState } from 'react';
 
 function Assessment() {
+  const [addiction, setAddiction] = useState("/");
+  const navigate = useNavigate();
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    console.log(addiction);
+    const data = "/"+addiction;
+    try {
+        navigate(data)
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
   return (
     <>
       <div className='flex'>
@@ -15,12 +31,24 @@ function Assessment() {
                     <h1 className="mb-4 text-3xl font-extrabold text-center">Ready to take assessment</h1>
                     <p className="text-gray-600 text-center">Choose what suits the most to you</p>
                   </div>
-                  <div className="space-y-4">
-                    <Link to = "/drugs"><button className="p-3 bg-white border rounded-full w-full font-semibold hover:bg-black hover:text-white mb-4">Drugs</button></Link> 
-                    <Link to = "/devices"><button className="p-3 bg-white border rounded-full w-full font-semibold hover:bg-black hover:text-white mb-4">Devices</button></Link>
-                    <Link to = "/alcohol"><button className="p-3 bg-white border rounded-full w-full font-semibold hover:bg-black hover:text-white mb-4">Alcohol</button></Link>
+                  <div className="space-y-1">
+                    {/* <Link to = "/drugs"><button className="p-3 bg-white border rounded-full w-full font-semibold hover:bg-black hover:text-white mb-4 " value="drugs" onClick={(e) => { setAddiction( addiction => e.target.value)}}>Drugs</button></Link>  */}
+
+                     <button className="p-3 bg-white border rounded-full w-full font-semibold hover:bg-black hover:text-white mb-4 " value="drugs" onClick={(e) => { setAddiction( addiction => e.target.value)}}>Drugs</button>
+
+                    
+                    <button className="p-3 bg-white border rounded-full w-full font-semibold hover:bg-black hover:text-white mb-4 " value="devices" onClick={(e) => { setAddiction(addiction => e.target.value) }}>Devices</button>
+
+                    <button className="p-3 bg-white border rounded-full w-full font-semibold hover:bg-black hover:text-white mb-4 " value="alcohol" onClick={(e) => { setAddiction(addiction => e.target.value) }}>Alcohol</button>
+                    
+                    
                     <Link to = "/assessment"><button className="p-3 bg-white border rounded-full w-full font-semibold hover:bg-black hover:text-white">Other</button></Link>
+
                   </div>
+
+                  <button className="p-3 bg-blue-500 border rounded-full mx-24 w-1/2 font-semibold hover:bg-black hover:text-white" onClick={handleSubmit}>Next</button>
+
+
       </div>
     </div>
   </div>

@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import { FaComment, FaQuestionCircle } from 'react-icons/fa';
 
 function Support2() {
-  const score = 43; 
-  
+  const min = 30;
+  const max = 80;
+  const score = Math.floor(Math.random() * (max - min) + min);
 
   return (
     <div className="flex flex-col justify-center items-center h-screen">

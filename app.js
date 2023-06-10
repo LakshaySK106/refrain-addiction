@@ -1,8 +1,9 @@
-require('dotenv').config();
-const express = require('express');
-const { collection } = require('./mongo');
-const routes = require('./routes/routes');
-const cors = require('cors');
+
+require("dotenv").config();
+const express = require("express");
+const {collection, col2} = require("./mongo");
+const routes = require("./routes/routes");
+const cors = require("cors");
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -143,18 +144,23 @@ app.use('/api/routes', routes);
 // if(process.env.NODE_ENV === 'production'){
 //   app.use(express.static('frontend/build'));
 // }
-
-app.post('/answers', async (req, res) => {
-  const { QuizInfo } = req.body;
+app.post("/answers", async (req, res) => {
+  const quizinfo =req.body.quizInfo;
 
   const data = {
-    QuizInfo: QuizInfo,
+    quizinfo: quizinfo,
   };
+
   console.log(data);
-  try {
-    await collection.insertMany([data]);
-  } catch (e) {
-    res.json('fail');
+  try{
+    await col2.insertMany([data])
+      .catch((e) => {
+        alert("wrong details");
+        console.log(e);
+      });
+  } catch(e)
+  {
+    res.json("fail");
   }
 });
 
