@@ -1,6 +1,4 @@
 .button_page {
-    height: 100vh;
-    width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,9 +8,6 @@
 #buttons_heading {
     position: relative;
     top: 10.5rem;
-    background: rgb(87, 123, 221);
-    background: linear-gradient(90deg, rgba(87, 123, 221, 1) 0%, rgba(252, 125, 33, 1) 46%, rgba(252, 125, 33, 1) 60%);
-
     -webkit-background-clip: text;
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -22,39 +17,37 @@
 .buttons {
     margin-top: 11.6em;
     display: grid;
-    grid-template-columns: repeat(3, 14vw);
+    margin-left: 5vw;
+    grid-template-columns: repeat(3, 15vw);
     justify-content: space-between;
-    width: 60vw;
-    margin-right: 20vw;
-    margin-left: 20vw;
     gap: 0px 100px;
-    color: wheat;
+    color: rgb(164, 164, 252);
 }
 
 button:nth-child(n) {
-    margin-bottom: 4vh;
+    margin-bottom: 5vh;
     transition: all;
     transition-duration: 0.5s;
 }
 
 /*youtube button*/
-button:nth-child(1) {
-    background: url(../../assets/youtube_white.png) no-repeat;
-    align-items: center;
-    justify-content: center;
-    background-size: 45px;
-    cursor: pointer;
-    border: none;
-}
+// button:nth-child(1) {
+//     background: url(../../assets/youtube_color.png) no-repeat;
+//     align-items: center;
+//     justify-content: center;
+//     background-size: 45px;
+//     cursor: pointer;
+//     border: none;
+// }
 
-button:nth-child(1):hover {
-    background: url(../../assets/youtube_color.png) no-repeat;
-    align-items: center;
-    justify-content: center;
-    background-size: 45px;
-    cursor: pointer;
-    border: none;
-}
+// button:nth-child(1):hover {
+//     background: url(../../assets/youtube_white.png) no-repeat;
+//     align-items: center;
+//     justify-content: center;
+//     background-size: 45px;
+//     cursor: pointer;
+//     border: none;
+// }
 
 #you {
     position: relative;
@@ -65,7 +58,7 @@ button:nth-child(1):hover {
 
 /*facebook button*/
 button:nth-child(2) {
-    background: url(../../assets/facebook_white.png) no-repeat;
+    background: url(../../assets/facebook_color.png) no-repeat;
     align-items: center;
     justify-content: center;
     background-size: 45px;
@@ -74,7 +67,7 @@ button:nth-child(2) {
 }
 
 button:nth-child(2):hover {
-    background: url(../../assets/facebook_color.png) no-repeat;
+    background: url(../../assets/facebook_white.png) no-repeat;
     align-items: center;
     justify-content: center;
     background-size: 45px;
@@ -91,7 +84,7 @@ button:nth-child(2):hover {
 
 /*discord button*/
 button:nth-child(3) {
-    background: url(../../assets/discord_white.png) no-repeat;
+    background: url(../../assets/discord_color.png) no-repeat;
     align-items: center;
     justify-content: center;
     background-size: 45px;
@@ -100,7 +93,7 @@ button:nth-child(3) {
 }
 
 button:nth-child(3):hover {
-    background: url(../../assets/discord_color.png) no-repeat;
+    background: url(../../assets/discord_white.png) no-repeat;
     align-items: center;
     justify-content: center;
     background-size: 45px;
@@ -117,7 +110,7 @@ button:nth-child(3):hover {
 
 /*instagram button*/
 button:nth-child(4) {
-    background: url(../../assets/insta_white.png) no-repeat;
+    background: url(../../assets/insta_color.png) no-repeat;
     align-items: center;
     justify-content: center;
     background-size: 45px;
@@ -126,7 +119,7 @@ button:nth-child(4) {
 }
 
 button:nth-child(4):hover {
-    background: url(../../assets/insta_color.png) no-repeat;
+    background: url(../../assets/insta_white.png) no-repeat;
     align-items: center;
     justify-content: center;
     background-size: 45px;
@@ -143,7 +136,7 @@ button:nth-child(4):hover {
 
 /*prime video button*/
 button:nth-child(5) {
-    background: url(../../assets/prime_white.png) no-repeat;
+    background: url(../../assets/prime_color.png) no-repeat;
     align-items: center;
     justify-content: center;
     background-size: 45px;
@@ -152,7 +145,7 @@ button:nth-child(5) {
 }
 
 button:nth-child(5):hover {
-    background: url(../../assets/prime_color.png) no-repeat;
+    background: url(../../assets/prime_white.png) no-repeat;
     align-items: center;
     justify-content: center;
     background-size: 45px;
@@ -169,7 +162,7 @@ button:nth-child(5):hover {
 
 /*hotstar button*/
 button:nth-child(6) {
-    background: url(../../assets/hotstar_white.png) no-repeat;
+    background: url(../../assets/hotstar_color.png) no-repeat;
     align-items: center;
     justify-content: center;
     background-size: 45px;
@@ -178,7 +171,7 @@ button:nth-child(6) {
 }
 
 button:nth-child(6):hover {
-    background: url(../../assets/hotstar_color.png) no-repeat;
+    background: url(../../assets/hotstar_white.png) no-repeat;
     align-items: center;
     justify-content: center;
     background-size: 45px;
@@ -195,7 +188,7 @@ button:nth-child(6):hover {
 
 /*netflix button*/
 button:nth-child(7) {
-    background: url(../../assets/netflix_white.png) no-repeat;
+    background: url(../../assets/netflix_color.png) no-repeat;
     align-items: center;
     justify-content: center;
     background-size: 45px;
@@ -204,7 +197,7 @@ button:nth-child(7) {
 }
 
 button:nth-child(7):hover {
-    background: url(../../assets/netflix_color.png) no-repeat;
+    background: url(../../assets/netflix_white.png) no-repeat;
     align-items: center;
     justify-content: center;
     background-size: 45px;
@@ -221,7 +214,7 @@ button:nth-child(7):hover {
 
 /*voot button*/
 button:nth-child(8) {
-    background: url(../../assets/voot_white.png) no-repeat;
+    background: url(../../assets/voot_color.png) no-repeat;
     align-items: center;
     justify-content: center;
     background-size: 50px;
@@ -230,7 +223,7 @@ button:nth-child(8) {
 }
 
 button:nth-child(8):hover {
-    background: url(../../assets/voot_color.png) no-repeat;
+    background: url(../../assets/voot_white.png) no-repeat;
     align-items: center;
     justify-content: center;
     background-size: 50px;
@@ -247,7 +240,7 @@ button:nth-child(8):hover {
 
 /*sony liv button*/
 button:nth-child(9) {
-    background: url(../../assets/sonyliv_white.png) no-repeat;
+    background: url(../../assets/sonyliv_color.png) no-repeat;
     align-items: center;
     justify-content: center;
     background-size: 40px;
@@ -256,7 +249,7 @@ button:nth-child(9) {
 }
 
 button:nth-child(9):hover {
-    background: url(../../assets/sonyliv_color.png) no-repeat;
+    background: url(../../assets/sonyliv_white.png) no-repeat;
     align-items: center;
     justify-content: center;
     background-size: 40px;
@@ -282,7 +275,7 @@ button:nth-child(9):hover {
 
 #custom_url {
     font-family: 'Roboto', sans-serif;
-    color: rgb(219, 127, 61);
+    color: rgb(20, 11, 35);
     font-size: .8rem;
     margin: 0 auto;
     background: 0;
@@ -304,27 +297,26 @@ button:nth-child(9):hover {
     text-align: center;
     text-decoration: none;
     font-size: 0.9rem;
-    background: linear-gradient(45deg, rgba(87, 123, 221, 1), rgb(219, 127, 61));
+    background:  rgb(96, 127, 213);
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 #custom_url_add_button:hover {
-    background: linear-gradient(45deg, rgb(219, 127, 61), rgba(87, 123, 221, 1));
+    background: rgb(44, 83, 212);
 }
 
 .candd {
-    width: 100vw;
     transition: all 1s ease-in-out;
-    display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 20vh;
 }
 
 #create_download {
     margin-top: 30px;
     width: 40vw;
     border-radius: 4px;
-    background: linear-gradient(90deg, rgba(87, 123, 221, 1) 0%, rgb(209, 117, 51) 26%, rgb(219, 127, 61) 40%);
+    background: rgb(96, 127, 213);
     box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.25), -5px -5px 30px 7px rgba(0, 0, 0, 0.22);
     border: none;
     color: rgb(20, 11, 35);
@@ -336,16 +328,16 @@ button:nth-child(9):hover {
 }
 
 #create_download:hover {
-    background: linear-gradient(90deg, rgb(219, 127, 61) 0%, rgb(209, 117, 51) 26%, rgba(87, 123, 221, 1) 40%);
+    background: rgb(44, 83, 212);
     font-size: 20px;
 }
 
 .white {
-    color: white
+    color: rgb(96, 127, 213);
 }
 
 .orange {
-    color: orange
+    color: red;
 }
 
 

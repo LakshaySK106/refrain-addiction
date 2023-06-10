@@ -1,6 +1,4 @@
 #about {
-    width: 100vw;
-    height: 100vh;
     display: flex;
     flex-direction: column;
 }
@@ -14,11 +12,10 @@
 
 #heading_how {
     position: relative;
-    font-size: 2.6em;
-    margin-bottom: 50px;
+    font-size: 2.0em;
+    margin-bottom: 30px;
     color: wheat;
-    background: rgb(87, 123, 221);
-    background: linear-gradient(90deg, rgba(87, 123, 221, 1) 0%, rgba(252, 125, 33, 1) 46%, rgba(252, 125, 33, 1) 60%);
+    background: rgb(96, 127, 213);
 
     -webkit-background-clip: text;
     -moz-background-clip: text;
@@ -46,7 +43,7 @@
     inset: 0;
     border-radius: 20px;
     padding: 3px;
-    background: linear-gradient(90deg, rgba(87, 123, 221, 1) 0%, rgba(252, 125, 33, 1) 46%, rgba(252, 125, 33, 1) 60%);
+    background: rgb(96, 127, 213);
     -webkit-mask:
         linear-gradient(#fff 0 0) content-box,
         linear-gradient(#fff 0 0);
@@ -57,7 +54,7 @@
 
 .text_how_to_uses {
     text-align: left;
-    color: wheat;
+    color: rgb(96, 127, 213);
     font-size: 18px;
     line-height: 32px;
     margin-left: 30px;
@@ -66,5 +63,5 @@
 }
 
 .number_color {
-    color: rgb(252, 125, 33);
+    color: rgb(96, 127, 213);
 }
