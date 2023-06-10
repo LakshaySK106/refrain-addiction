@@ -8,3 +8,4 @@ export { default as Landing } from "./Landing";
 export { default as Book } from "./Book";
 export { default as Login } from "./Login";
 export { default as Register } from "./Register";
+export { default as Blockweb } from "./Blockweb";
