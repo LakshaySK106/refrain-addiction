@@ -6,6 +6,9 @@ import Alcohol from './pages/Alcohol';
 import Devices from './pages/Devices';
 import Other from './pages/Other';
 import Support from './pages/Support';
+import Support1 from './pages/Support1';
+import Support2 from './pages/Support2';
+
 
 function App() {
   return (
@@ -27,6 +30,8 @@ function App() {
         <Route path="/devices" element={<Devices />} />
         <Route path="/other" element={<Other />} />
         <Route path="/support" element={<Support />} />
+        <Route path="/drugSupp" element={<Support1 />} />
+        <Route path="/alcoholSupp" element={<Support2 />} />
        </Routes>
     </div>
   )

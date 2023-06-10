@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-
 const Devices = () => {
     const questions = [
         {
@@ -130,7 +129,7 @@ const Devices = () => {
         {currentQuestion < questions.length ? (
           renderQuestion()
         ) : (
-          <Link to = "/Support">
+          <Link to = "/support">
             <button className="w-full bg-black hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
               Submit
             </button>

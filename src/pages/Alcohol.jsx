@@ -129,7 +129,7 @@ const Alcohol = () => {
         {currentQuestion < questions.length ? (
           renderQuestion()
         ) : (
-          <Link to = "/Support">
+          <Link to = "/alcoholSupp">
             <button className="w-full bg-black hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
               Submit
             </button>

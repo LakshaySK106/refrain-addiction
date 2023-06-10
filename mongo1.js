@@ -26,6 +26,6 @@ const dataSchema = new mongoose.Schema({
   },
 });
 
-const coll = mongoose.model("coll", dataSchema);
+const blockCollection = mongoose.model("blockCollection", dataSchema);
 
-module.exports = coll;
+module.exports = blockCollection;

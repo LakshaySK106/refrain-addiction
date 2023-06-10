@@ -57,23 +57,23 @@ button:nth-child(n) {
 }
 
 /*facebook button*/
-button:nth-child(2) {
-    background: url(../../assets/facebook_color.png) no-repeat;
-    align-items: center;
-    justify-content: center;
-    background-size: 45px;
-    cursor: pointer;
-    border: none;
-}
+// button:nth-child(2) {
+//     background: url(../../assets/facebook_color.png) no-repeat;
+//     align-items: center;
+//     justify-content: center;
+//     background-size: 45px;
+//     cursor: pointer;
+//     border: none;
+// }
 
-button:nth-child(2):hover {
-    background: url(../../assets/facebook_white.png) no-repeat;
-    align-items: center;
-    justify-content: center;
-    background-size: 45px;
-    cursor: pointer;
-    border: none;
-}
+// button:nth-child(2):hover {
+//     background: url(../../assets/facebook_white.png) no-repeat;
+//     align-items: center;
+//     justify-content: center;
+//     background-size: 45px;
+//     cursor: pointer;
+//     border: none;
+// }
 
 #face {
     position: relative;
@@ -83,23 +83,23 @@ button:nth-child(2):hover {
 }
 
 /*discord button*/
-button:nth-child(3) {
-    background: url(../../assets/discord_color.png) no-repeat;
-    align-items: center;
-    justify-content: center;
-    background-size: 45px;
-    cursor: pointer;
-    border: none;
-}
+// button:nth-child(3) {
+//     background: url(../../assets/discord_color.png) no-repeat;
+//     align-items: center;
+//     justify-content: center;
+//     background-size: 45px;
+//     cursor: pointer;
+//     border: none;
+// }
 
-button:nth-child(3):hover {
-    background: url(../../assets/discord_white.png) no-repeat;
-    align-items: center;
-    justify-content: center;
-    background-size: 45px;
-    cursor: pointer;
-    border: none;
-}
+// button:nth-child(3):hover {
+//     background: url(../../assets/discord_white.png) no-repeat;
+//     align-items: center;
+//     justify-content: center;
+//     background-size: 45px;
+//     cursor: pointer;
+//     border: none;
+// }
 
 #dis {
     position: relative;
