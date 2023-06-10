@@ -15,11 +15,14 @@ import {
 import Consultant from './pages/Consultant';
 import Loginc from './pages/Loginc';
 import Registerc from './pages/Registerc';
+import Dashboard from './pages/Dashboard';
 function App() {
   return (
     <div>
       <Routes>
         <Route exact path="/home" element={<Home />} />
+        <Route exact path="/dashboard" element={<Dashboard />} />
+
         <Route path="/assessment" element={<Assessment />} />
         <Route path="/track" element={<Track />} />
         <Route path="/chat" element={<Chat />} />

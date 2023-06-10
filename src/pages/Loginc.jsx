@@ -19,7 +19,7 @@ function LoginC() {
         })
         .then((res) => {
           if (res.data === 'exist') {
-            history('/home', { state: { id: email } });
+            history('/dashboard', { state: { id: email } });
           } else if (res.data === 'notexist') {
             alert('Invalid Credentials!');
           }

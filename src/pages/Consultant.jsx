@@ -6,7 +6,7 @@ export default function Consultant() {
       <Link to="/loginc">
         <button className="btn btn-smaller btn-primary">Login</button>
       </Link>
-      <Link to="/regc">
+      <Link to="/registerc">
         <button className="btn btn-smaller btn-primary">Register</button>
       </Link>
     </div>

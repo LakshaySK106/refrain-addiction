@@ -27,7 +27,7 @@ function Register() {
           if (res.data === 'exist') {
             alert('User already exists');
           } else if (res.data === 'notexist') {
-            history('/home', { state: { id: email } });
+            history('/dashboard', { state: { id: email } });
           }
         })
         .catch((e) => {
