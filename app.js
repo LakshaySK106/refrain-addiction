@@ -63,19 +63,21 @@ app.use("/api/routes", routes);
 
 
 
+
 app.post("/answers", async (req, res) => {
   const quizinfo =req.body.quizInfo;
 
   const data = {
     quizinfo: quizinfo,
   };
-console.log(data);
+
+  console.log(data);
   try{
-    await col2.insertMany([data.quizinfo])
-    .catch((e) => {
-      alert("wrong details");
-      console.log(e);
-    });
+    await col2.insertMany([data])
+      .catch((e) => {
+        alert("wrong details");
+        console.log(e);
+      });
   } catch(e)
   {
     res.json("fail");

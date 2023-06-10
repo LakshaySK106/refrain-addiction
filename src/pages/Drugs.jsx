@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import {useNavigate, Link } from 'react-router-dom';
 
 
 const Drugs = () => {
+    const navigate=useNavigate();
+
     const questions = [
         {
           question: 'How often do you use drugs?',
@@ -64,6 +66,9 @@ const Drugs = () => {
     try {
       await axios.post('http://localhost:8000/answers', {
         quizInfo: Object.fromEntries(quizInfo),
+      })
+      .then(res=>{
+        navigate("/drugSupp")
       })
       
     } catch (e) {
