@@ -1,6 +1,6 @@
 require("dotenv").config();
 const express = require("express");
-const collection = require("./mongo");
+const {collection, col2} = require("./mongo");
 const routes = require("./routes/routes");
 const cors = require("cors");
 const app = express();
@@ -64,14 +64,18 @@ app.use("/api/routes", routes);
 
 
 app.post("/answers", async (req, res) => {
-  const {QuizInfo} =req.body;
+  const quizinfo =req.body.quizInfo;
 
   const data = {
-    QuizInfo:QuizInfo
+    quizinfo: quizinfo,
   };
 console.log(data);
   try{
-    await collection.insertMany([data]);
+    await col2.insertMany([data.quizinfo])
+    .catch((e) => {
+      alert("wrong details");
+      console.log(e);
+    });
   } catch(e)
   {
     res.json("fail");

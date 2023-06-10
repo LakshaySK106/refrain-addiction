@@ -58,17 +58,18 @@ const Drugs = () => {
 
  
 
-//   async function handleSubmit(e) {
-//     e.preventDefault();
-//     console.log(quizInfo);
-//     try {
-//     //   await axios.post('http://localhost:8000/answers', {
-//     //     quizInfo: Object.fromEntries(quizInfo),
-//       });
-//     } catch (e) {
-//       console.log(e);
-//     }
-//   }
+  async function handleSubmit(e) {
+    e.preventDefault();
+    console.log(quizInfo);
+    try {
+      await axios.post('http://localhost:8000/answers', {
+        quizInfo: Object.fromEntries(quizInfo),
+      })
+      
+    } catch (e) {
+      console.log(e);
+    }
+  }
 
   const handleNextQuestion = () => {
     if (selectedAnswer) {
@@ -129,7 +130,7 @@ const Drugs = () => {
           renderQuestion()
         ) : (
           <Link to = "/drugSupp">
-            <button className="w-full bg-black hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            <button className="w-full bg-black hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={handleSubmit}>
               Submit
             </button>
           </Link>

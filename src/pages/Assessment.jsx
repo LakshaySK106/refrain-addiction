@@ -1,8 +1,11 @@
 import React from 'react'
 import { Sidebar } from "../components"
 import { Link } from "react-router-dom";
+import { useState } from 'react';
 
 function Assessment() {
+  const [addiction, setAddiction] = useState("");
+
   return (
     <>
       <div className='flex'>
@@ -16,9 +19,9 @@ function Assessment() {
                     <p className="text-gray-600 text-center">Choose what suits the most to you</p>
                   </div>
                   <div className="space-y-4">
-                    <Link to = "/drugs"><button className="p-3 bg-white border rounded-full w-full font-semibold hover:bg-black hover:text-white mb-4">Drugs</button></Link> 
-                    <Link to = "/devices"><button className="p-3 bg-white border rounded-full w-full font-semibold hover:bg-black hover:text-white mb-4">Devices</button></Link>
-                    <Link to = "/alcohol"><button className="p-3 bg-white border rounded-full w-full font-semibold hover:bg-black hover:text-white mb-4">Alcohol</button></Link>
+                    <Link to = "/drugs"><button className="p-3 bg-white border rounded-full w-full font-semibold hover:bg-black hover:text-white mb-4 " value="drugs" onClick={(e) => { setAddiction( addiction => e.target.value) }}>Drugs</button></Link> 
+                    <Link to = "/devices"><button className="p-3 bg-white border rounded-full w-full font-semibold hover:bg-black hover:text-white mb-4 " value="devices" onClick={(e) => { setAddiction(addiction => e.target.value) }}>Devices</button></Link>
+                    <Link to = "/alcohol"><button className="p-3 bg-white border rounded-full w-full font-semibold hover:bg-black hover:text-white mb-4 " value="alcohol" onClick={(e) => { setAddiction(addiction => e.target.value) }}>Alcohol</button></Link>
                     <Link to = "/assessment"><button className="p-3 bg-white border rounded-full w-full font-semibold hover:bg-black hover:text-white">Other</button></Link>
                   </div>
       </div>
