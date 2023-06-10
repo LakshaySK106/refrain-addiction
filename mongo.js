@@ -40,13 +40,6 @@ const newSchema = new mongoose.Schema({
   },
 });
 
-const collection = mongoose.model("collection", newSchema);
-
-
-
-
-
-
 const dataSchema = new mongoose.Schema({
   web_arr: {
     type: Array,
@@ -56,10 +49,20 @@ const dataSchema = new mongoose.Schema({
   },
 });
 
+const new2 = new mongoose.Schema({
+  QuizInfo:{
+    type: Map,
+    required: true,
+  },
+})
+
+const collection = mongoose.model("collection", newSchema);
 const coll = mongoose.model("coll", dataSchema);
+const col2 = mongoose.model("QuizInfo", new2);
 
 
-module.exports = {collection, coll};
+
+module.exports = {collection, coll, col2};
 // module.exports = { collection };
 
 

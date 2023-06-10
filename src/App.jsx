@@ -1,6 +1,11 @@
 import React from 'react'
 import { Route, Routes } from "react-router-dom";
 import { Home, Assessment, Track, Chat, Profile, Landing, Book, Check, Login, Register, Blockweb } from './pages';
+import Drugs from './pages/Drugs';
+import Alcohol from './pages/Alcohol';
+import Devices from './pages/Devices';
+import Other from './pages/Other';
+import Support from './pages/Support';
 
 function App() {
   return (
@@ -17,6 +22,11 @@ function App() {
           <Route path="/register" element={<Register/>} />
           <Route path="/login" element={<Login/>} />
           <Route path="/blockweb" element={<Blockweb/>} />
+          <Route path="/drugs" element={<Drugs />} />
+        <Route path="/alcohol" element={<Alcohol />} />
+        <Route path="/devices" element={<Devices />} />
+        <Route path="/other" element={<Other />} />
+        <Route path="/support" element={<Support />} />
        </Routes>
     </div>
   )
