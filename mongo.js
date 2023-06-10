@@ -40,6 +40,7 @@ const newSchema = new mongoose.Schema({
   },
 });
 
+<<<<<<< HEAD
 const dataSchema = new mongoose.Schema({
   web_arr: {
     type: Array,
@@ -66,3 +67,8 @@ module.exports = {collection, coll, col2};
 // module.exports = { collection };
 
 
+=======
+const collection = mongoose.model("collection", newSchema);
+
+module.exports = collection; 
+>>>>>>> 586c6a6ca5f70161cfaef4de774d1fc1d19e2e6e
