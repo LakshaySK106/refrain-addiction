@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './App.css';
+import {sbIcon} from "../assets";
 
 function Landing() {
   return (
@@ -15,7 +16,14 @@ function Landing() {
           <div className="header-section">
             <h1>
               <a className="navbar-brand logo editContent" href="index.html">
-                <span className="fa fa-life-ring" />Refrain Addiction
+                <div className='flex'>
+              <img
+            src={sbIcon}
+            width={35}
+            alt=""
+          />
+              <a href="/" className='mx-2 mt-2'>Refrain Addiction</a>
+            </div>
               </a>
             </h1>
           </div>
@@ -182,7 +190,7 @@ function Landing() {
                 <input placeholder="Contact Number" name="number" type="text" required />
                 <input placeholder="Address" type="text" required />
                 <input placeholder="Timing" type="text" required />
-                <button disabled className="book-appo btn mt-3">Quick Appointment </button>
+                <span disabled className="book-appo btn mt-3">Quick Appointment </span>
               </div>
             </form>
           </div>
@@ -390,7 +398,15 @@ function Landing() {
       <div className="row footer-top">
         <div className="col-lg-4 footer-grid_section_w3layouts">
           <h2 className="logo-2 mb-lg-4 mb-3">
-            <a href="index.html"><span className="fa fa-life-ring" />Refrain Addiction</a>
+            
+            <div className='flex'>
+              <img
+            src={sbIcon}
+            width={35}
+            alt=""
+          />
+              <a href="/" className='mx-2 mt-2'>Refrain Addiction</a>
+            </div>
           </h2>
           <p>A BREADS' PROGRAM</p>
           <h4 className="sub-con-fo ad-info my-4">Catch on Social</h4>
@@ -422,8 +438,8 @@ function Landing() {
             <h3 className="footer-title mb-lg-4 mb-3">Newsletter</h3>
             <p>By subscribing to our mailing list you will always get latest news and updates from us.</p>
             <form action="#" method="post" className="w3layouts-newsletter">
-              <input type="email" name="Email" placeholder="Enter your email..." required />
-              <button className="btn1"><span className="fa fa-paper-plane-o" aria-hidden="true" /></button>
+              <input type="email" name="Email" className='h-12' placeholder="Enter your email..." required />
+              <button className="btn1 h-12"><span className="fa fa-paper-plane-o" aria-hidden="true" /></button>
             </form>
           </div>
           <div className="row mt-lg-4 bottom-w3layouts-sec-nav mx-0">
@@ -476,7 +492,7 @@ function Landing() {
               <div className="contact-info">
                 <div className="footer-address-inf">
                   <h4 className="ad-info mb-2">Phone</h4>
-                  <p>+91 98 8907 9987</p>
+                  <p>+91 00010209247</p>
                 </div>
                 <div className="footer-address-inf my-4">
                   <h4 className="ad-info mb-2">Email </h4>
@@ -484,7 +500,7 @@ function Landing() {
                 </div>
                 <div className="footer-address-inf">
                   <h4 className="ad-info mb-2">Location</h4>
-                  <p>Honey Avenue</p>
+                  <p>Honey Avenue, Delhi, 100201</p>
                 </div>
               </div>
             </div>
