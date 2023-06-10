@@ -126,6 +126,9 @@ const Devices = () => {
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
       <div className="w-full max-w-md mx-auto bg-white p-4 rounded shadow-lg">
+        <div className='text-xl font-bold mb-6'>
+            Your Quiz has been completed. Click on Submit button to see your score.
+        </div>
         {currentQuestion < questions.length ? (
           renderQuestion()
         ) : (
