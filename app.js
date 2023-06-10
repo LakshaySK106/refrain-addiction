@@ -61,6 +61,23 @@ app.use("/api/routes", routes);
 //   app.use(express.static('frontend/build'));
 // }
 
+
+
+app.post("/answers", async (req, res) => {
+  const {QuizInfo} =req.body;
+
+  const data = {
+    QuizInfo:QuizInfo
+  };
+console.log(data);
+  try{
+    await collection.insertMany([data]);
+  } catch(e)
+  {
+    res.json("fail");
+  }
+});
+
 app.listen(8000, () => {
   console.log("Port Connected!");
 });
