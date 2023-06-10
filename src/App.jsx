@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route, Routes } from "react-router-dom";
-import { Home, Assessment, Track, Chat, Profile, Landing, Book, Check, Login, Register } from './pages';
+import { Home, Assessment, Track, Chat, Profile, Landing, Book, Check, Login, Register, Blockweb } from './pages';
 
 function App() {
   return (
@@ -16,6 +16,7 @@ function App() {
           <Route path="/Appointment/past" element={<Check />} />
           <Route path="/register" element={<Register/>} />
           <Route path="/login" element={<Login/>} />
+          <Route path="/blockweb" element={<Blockweb/>} />
        </Routes>
     </div>
   )
