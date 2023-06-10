@@ -39,7 +39,7 @@ function LoginC() {
         <div className="bg-white items-center justify-center rounded-2xl shadow-2xl flex w-2/5 max-w-4xl">
           <div className="w-full">
             <div className="text-3xl font-bold text-blue-500 mt-10">
-              Registered Councilor Login
+              Registered Councelor Login
             </div>
 
             <form action="POST">
@@ -64,7 +64,7 @@ function LoginC() {
                     placeholder="Password"
                   />
                 </div>
-                <div className="m-4">
+                <div className="mt-4">
                   <button
                     onClick={submit}
                     className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
@@ -78,8 +78,8 @@ function LoginC() {
 
             <div>or</div>
 
-            <div className="mb-4 mt-2 hover:underline hover:text-blue-500">
-              <Link to="/registerc">New User? Register</Link>
+            <div className="mb-4 hover:underline hover:text-blue-500">
+              <Link to="/registerc">New Councelor? Register</Link>
             </div>
             <div className="mb-6 ">
               <Link

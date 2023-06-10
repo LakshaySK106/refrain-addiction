@@ -39,9 +39,9 @@ function Landing() {
                         <Link to="/">Home</Link>
                       </li>
                       <li>
-                        <Link to="/consultant">
-                          <button className="btn btn-blue">
-                            Log in as Counselor
+                        <Link to="/loginc">
+                          <button className="menu">
+                            LOGIN AS COUNCELOR
                           </button>{' '}
                         </Link>
                       </li>
@@ -394,10 +394,10 @@ function Landing() {
               />
               <label htmlFor="tab3">Porn </label>
 
-              <section id="content1" className="inner-w3layouts-wrap">
+              <section id="content1" className="inner-w3layouts-wrap ">
                 <div className="row part-grids text-center inner-sec-w3ls d-flex justify-content-center">
-                  <div className="col-md-6 partgrid2">
-                    <div className="thumbnail card">
+                  <div className="col-md-6 partgrid2 ">
+                    <div className="thumbnail cardd">
                       <div className="img-event">
                         <img
                           className="img-fluid"
@@ -406,7 +406,7 @@ function Landing() {
                           style={{ margin: 'auto' }}
                         />
                       </div>
-                      <div className="caption card-body p-md-4">
+                      <div className="caption cardd-body p-md-4">
                         <h4 className="mb-4 editContent">Natural Drugs</h4>
                         <p>
                           Natural drugs are derived from substances found in
@@ -420,7 +420,7 @@ function Landing() {
                     </div>
                   </div>
                   <div className="col-md-6 partgrid1">
-                    <div className="thumbnail card">
+                    <div className="thumbnail cardd">
                       <div className="img-event">
                         <img
                           className="img-fluid"
@@ -429,7 +429,7 @@ function Landing() {
                           style={{ margin: 'auto' }}
                         />
                       </div>
-                      <div className="caption card-body p-md-4">
+                      <div className="caption cardd-body p-md-4">
                         <h4 className="mb-4 editContent">Synthetic Drug</h4>
                         <p>
                           Synthetic drugs are artificially created in
@@ -449,7 +449,7 @@ function Landing() {
               <section id="content2" className="inner-w3layouts-wrap">
                 <div className="row part-grids text-center">
                   <div className="col-md-6 partgrid2 d-flex justify-content-center">
-                    <div className="thumbnail card">
+                    <div className="thumbnail cardd">
                       <div className="img-event">
                         <img
                           className="img-fluid"
@@ -458,7 +458,7 @@ function Landing() {
                           style={{ margin: 'auto' }}
                         />
                       </div>
-                      <div className="caption card-body p-md-4">
+                      <div className="caption cardd-body p-md-4">
                         <h4 className="mb-4 editContent">Social Media</h4>
                         <p>
                           Social media addiction is a pervasive issue
@@ -471,7 +471,7 @@ function Landing() {
                     </div>
                   </div>
                   <div className="col-md-6 partgrid1 d-flex justify-content-center">
-                    <div className="thumbnail card">
+                    <div className="thumbnail cardd">
                       <div className="img-event">
                         <img
                           className="img-fluid"
@@ -480,7 +480,7 @@ function Landing() {
                           style={{ margin: 'auto' }}
                         />
                       </div>
-                      <div className="caption card-body p-md-4">
+                      <div className="caption cardd-body p-md-4">
                         <h4 className="mb-4 editContent">
                           Technology Dependency
                         </h4>
@@ -500,7 +500,7 @@ function Landing() {
               <section id="content3" className="inner-w3layouts-wrap">
                 <div className="row part-grids text-center">
                   <div className="col-md-12 partgrid d-flex justify-content-center">
-                    <div className="thumbnail card">
+                    <div className="thumbnail cardd">
                       <div className="img-event">
                         <img
                           className="img-fluid"
@@ -509,7 +509,7 @@ function Landing() {
                           style={{ margin: 'auto' }}
                         />
                       </div>
-                      <div className="caption card-body p-md-4">
+                      <div className="caption cardd-body p-md-4">
                         <h4 className="mb-4 editContent">Porn</h4>
                         <p>
                           Porn addiction is a complex issue that affects
