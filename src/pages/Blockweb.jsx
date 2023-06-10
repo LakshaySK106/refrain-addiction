@@ -9,7 +9,7 @@ function Blockweb() {
         <div className='h-screen sticky top-0'>
           < Sidebar />
         </div>
-        <div  style={{ position:"relative" , width: "800px", paddingTop:"4px", margin:"auto"  }} >
+        <div  style={{ position:"relative" , width: "800px", margin:"auto"  }} >
           <About/>
           <Testbuttons/>
         </div>
