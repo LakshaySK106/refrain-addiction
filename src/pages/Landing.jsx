@@ -46,6 +46,13 @@ function Landing() {
                         </Link>
                       </li>
                       <li>
+                        <Link to="/adminlogin">
+                          <button className="btn btn-blue">
+                            Log in as Admin
+                          </button>{' '}
+                        </Link>
+                      </li>
+                      <li>
                         {/* First Tier Drop Down */}
                         <label htmlFor="drop-2" className="toggle">
                           Dropdown{' '}
