@@ -34,6 +34,10 @@ const newSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  addiction: {
+    type: String,
+    required: false,
+  },
   password: {
     type: String,
     required: true,
