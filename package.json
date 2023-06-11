@@ -40,8 +40,12 @@
     "react-slick": "^0.29.0",
     "sass": "^1.53.0",
     "shortid": "^2.2.16",
+    "simplewebrtc": "^3.0.2",
     "slick-carousel": "^1.8.1",
+    "socket.io": "^4.6.2",
     "tailwind-scrollbar": "^3.0.4",
+    "twilio": "^4.11.2",
+    "twilio-video": "^2.27.0",
     "typewriter-effect": "^2.18.2",
     "web-vitals": "^2.1.4",
     "zustand": "^4.3.8"

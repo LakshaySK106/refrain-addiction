@@ -7,7 +7,7 @@ import { BsPerson } from 'react-icons/bs';
 import { useMediaQuery } from 'react-responsive';
 import { MdMenu } from 'react-icons/md';
 import { NavLink, useLocation } from 'react-router-dom';
-import { MdOutlineAssessment, MdChat } from 'react-icons/md';
+import { MdOutlineAssessment, MdChat, MdVideoCall } from 'react-icons/md';
 import { BsGraphUpArrow } from 'react-icons/bs';
 import { sbIcon } from '../assets';
 import SubMenu from './SubMenu';
@@ -122,7 +122,12 @@ const Sidebar = ({ email }) => {
                 Chat with Me
               </NavLink>
             </li>
-
+            <li className="hover:text-blue-600 hover:font-medium">
+              <NavLink to={'/meet'} className="link">
+                <MdVideoCall size={23} className="min-w-max" />
+                Meet now
+              </NavLink>
+            </li>
             {/* <li className="hover:text-blue-600 hover:font-medium ">
               <NavLink to={"/track"} className="link">
                 <BsGraphUpArrow size={23} className="min-w-max" />

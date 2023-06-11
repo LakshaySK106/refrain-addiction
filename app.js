@@ -8,6 +8,9 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
+const { AccessToken } = require('twilio').jwt;
+const VideoGrant = AccessToken.VideoGrant;
+const http = require('http').createServer(app);
 const mongoose = require('mongoose');
 const mongoString = 'mongodb://localhost:27017/refrain-addiction';
 mongoose.connect(
@@ -244,36 +247,29 @@ app.get('/api/counselors', async (req, res) => {
   }
 });
 
-
-app.get("/api/userss", async (req, res) => {
- const userEmail = req.query.email; 
+app.get('/api/userss', async (req, res) => {
+  const userEmail = req.query.email;
   try {
     const user = await collection.findOne({ email: userEmail });
     if (!user) {
-      return res.status(404).json({ error: "User not found" });
+      return res.status(404).json({ error: 'User not found' });
     }
     res.json(user);
   } catch (error) {
-    console.error("Error fetching users:", error);
-    res.status(500).json({ error: "Internal Server Error" });
+    console.error('Error fetching users:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
   }
 });
 
-
-
-
-app.get("/api/usrs", async (req, res) => {
+app.get('/api/usrs', async (req, res) => {
   try {
     const youser = await collection.find();
     res.json(youser);
   } catch (error) {
-    console.error("Error fetching users:", error);
-    res.status(500).json({ error: "Internal Server Error" });
+    console.error('Error fetching users:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
   }
 });
-
-
-
 
 app.post('/api/counselors/approval', async (req, res) => {
   const { email } = req.body;
@@ -424,7 +420,37 @@ app.post('/drugtype', async (req, res) => {
     res.json('fail');
   }
 });
+const io = require('socket.io')(http);
 
+io.on('connection', (socket) => {
+  console.log('A user connected');
+
+  socket.on('disconnect', () => {
+    console.log('A user disconnected');
+  });
+});
+
+app.post('/token', (req, res) => {
+  const identity = req.body.identity;
+  const roomName = req.body.roomName;
+  const accountSid = 'AC38909233da0177158c0c27f70c6bfa99';
+  const apiKey = 'SK2dbbbcacc139c14c391842b44ad993e8';
+  const apiSecret = 'fgNWiIGLToDyL1dWmed5GdXAy8jpGcD4';
+  const token = new AccessToken(accountSid, apiKey, apiSecret, {
+    identity: identity,
+  });
+
+  const videoGrant = new VideoGrant({
+    room: roomName,
+  });
+  token.addGrant(videoGrant);
+
+  res.json({ token: token.toJwt() });
+});
+const PORT = 8001;
+http.listen(PORT, () => {
+  console.log(`Server is listening on port ${PORT}`);
+});
 app.listen(8000, () => {
   console.log('Port Connected!');
 });
