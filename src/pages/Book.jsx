@@ -111,9 +111,9 @@ function Book() {
             ))}
           </div>
           <div>
-            {selectedConsultant && <div className='text-xl' >Booking for ID: {selectedConsultant}</div>}
+            {selectedConsultant && <div className='text-xl' >Booking for the counselor: <span className='text-red-400'>{selectedConsultantName}</span> whose booking ID is: <span className='text-red-400'>'{selectedConsultant}'</span></div>}
             {selectedConsultant && (
-              <button onClick={handleBookAppointment} className='ml-24 mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>Book Appointment</button>
+              <button onClick={handleBookAppointment} className='w-full mx-auto mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>Book Appointment</button>
             )}
             {bookingSuccess && <div className='text-green-600 text-2xl font-bold mt-10'>Appointment has been booked successfully!✨
             <div className='text-black font-normal text-base ml-20 mt-8 mb-20'>
