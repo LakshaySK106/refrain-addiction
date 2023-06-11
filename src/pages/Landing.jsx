@@ -35,9 +35,7 @@ function Landing() {
                     </label>
                     <input type="checkbox" id="drop" />
                     <ul className="menu mt-3">
-                      <li className="">
-                        <Link to="/">Home</Link>
-                      </li>
+                  
                       <li>
                         <Link to="/loginc">
                           <button className="menu">
@@ -47,8 +45,8 @@ function Landing() {
                       </li>
                       <li>
                         <Link to="/adminlogin">
-                          <button className="btn btn-blue">
-                            Log in as Admin
+                          <button className="menu">
+                            LOGIN AS ADMIN
                           </button>{' '}
                         </Link>
                       </li>
@@ -80,9 +78,6 @@ function Landing() {
                             <a href="#test">Reviews</a>
                           </li>
                         </ul>
-                      </li>
-                      <li>
-                        <a href="#">Departments</a>
                       </li>
                       <li>
                         <a href="#">Contact Us</a>
