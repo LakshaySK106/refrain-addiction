@@ -58,8 +58,29 @@ const adminSchema = new mongoose.Schema({
     required: true,
   },
 });
+const appointmentSchema = new mongoose.Schema({
+  userId: {
+    type: String,
+
+    required: true,
+  },
+  consultantId: {
+    type: String,
+    ref: 'Consultant',
+    required: true,
+  },
+  meetId: {
+    type: String,
+    default: null,
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+});
 const Consultant = mongoose.model('consultant', consultantSchema);
 const Admin = mongoose.model('admin', adminSchema);
+const Appointment = mongoose.model('Appointment', appointmentSchema);
 app.get('/', cors(), (req, res) => {});
 app.get('/consultant', cors(), (req, res) => {});
 app.get('/api/consultants', async (req, res) => {
@@ -230,7 +251,16 @@ app.post('/api/counselors/approval', async (req, res) => {
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
+app.get('/api/appointments/requests', async (req, res) => {
+  try {
+    const appointmentRequests = await Appointment.find({ meetId: null });
 
+    res.json(appointmentRequests);
+  } catch (error) {
+    console.error('Error fetching appointment requests:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
 app.post('/answers', async (req, res) => {
   const quizinfo = req.body.quizInfo;
 
@@ -246,6 +276,25 @@ app.post('/answers', async (req, res) => {
     });
   } catch (e) {
     res.json('fail');
+  }
+});
+// Book appointment route
+app.post('/api/appointments/book', async (req, res) => {
+  const { userId, consultantId } = req.body;
+
+  try {
+    // Save the appointment data to the database
+    const appointment = new Appointment({
+      userId,
+      consultantId,
+      meetId: null,
+    });
+    await appointment.save();
+
+    res.json({ message: 'Appointment booked successfully' });
+  } catch (error) {
+    console.error('Error booking appointment:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
   }
 });
 

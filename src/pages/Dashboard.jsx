@@ -3,10 +3,26 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
 function Dashboard() {
   const [isApproved, setIsApproved] = useState(false);
+  const [appointmentRequests, setAppointmentRequests] = useState([]);
+
   const history = useNavigate();
   const location = useLocation();
   console.log(location.state.id);
   const email = location.state.id;
+  useEffect(() => {
+    const fetchAppointmentRequests = async () => {
+      try {
+        const response = await axios.get(
+          'http://localhost:8000/api/appointments/requests',
+        );
+        setAppointmentRequests(response.data);
+      } catch (error) {
+        console.error('Error fetching appointment requests:', error);
+      }
+    };
+
+    fetchAppointmentRequests();
+  }, []);
   useEffect(() => {
     const handleCheckApproval = async () => {
       try {
@@ -30,7 +46,11 @@ function Dashboard() {
       {isApproved ? (
         <div>
           <h1>Welcome to the Counselor Dashboard!</h1>
-          {/* Render the approved content */}
+          <ul>
+            {appointmentRequests.map((request) => (
+              <li key={request._id}>User ID: {request.userId}</li>
+            ))}
+          </ul>
         </div>
       ) : (
         <div>
