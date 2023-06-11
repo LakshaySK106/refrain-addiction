@@ -24,6 +24,8 @@ import Support from './pages/Support';
 import Support1 from './pages/Support1';
 import Support2 from './pages/Support2';
 import Consultant from './pages/Consultant';
+import AdminLogin from './pages/AdminLogin';
+import AdminDashboard from './pages/AdminDashboard';
 
 function App() {
   return (
@@ -39,6 +41,7 @@ function App() {
         <Route path="/Appointment/past" element={<Check />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/adminlogin" element={<AdminLogin />} />
         <Route path="/blockweb" element={<Blockweb />} />
         <Route path="/drugs" element={<Drugs />} />
         <Route path="/alcohol" element={<Alcohol />} />
@@ -51,6 +54,7 @@ function App() {
         <Route path="/loginc" element={<Loginc />} />
         <Route path="/consultant" element={<Consultant />} />
         <Route exact path="/dashboard" element={<Dashboard />} />
+        <Route exact path="/admindashboard" element={<AdminDashboard />} />
       </Routes>
     </div>
   );

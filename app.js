@@ -3,6 +3,7 @@ const express = require("express");
 const {collection, col2} = require("./mongo");
 const routes = require("./routes/routes");
 const cors = require("cors");
+
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -47,9 +48,53 @@ const consultantSchema = new mongoose.Schema({
     default: false,
   },
 });
+const adminSchema = new mongoose.Schema({
+  email: {
+    type: String,
+    required: true,
+  },
+
+  password: {
+    type: String,
+    required: true,
+  },
+});
 const Consultant = mongoose.model('consultant', consultantSchema);
+const Admin = mongoose.model('admin', adminSchema);
 app.get('/', cors(), (req, res) => {});
 app.get('/consultant', cors(), (req, res) => {});
+app.get('/api/consultants', async (req, res) => {
+  try {
+    const consultants = await Consultant.find();
+    res.json(consultants);
+  } catch (error) {
+    console.error('Error fetching consultants:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+// Update counselor approval status
+app.patch('/api/counselors/:id/approve', async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const counselor = await Consultant.findByIdAndUpdate(
+      id,
+      {
+        isApproved: true,
+      },
+      { new: true },
+    );
+
+    if (!counselor) {
+      return res.status(404).json({ error: 'Counselor not found' });
+    }
+
+    res.json({ message: 'Counselor approved successfully', counselor });
+  } catch (error) {
+    console.error('Error approving counselor:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
 
 app.post('/', async (req, res) => {
   const { email, password } = req.body;
@@ -74,6 +119,24 @@ app.post('/consultant', async (req, res) => {
   console.log(req.body);
   try {
     const check = await Consultant.findOne({
+      email: email,
+      password: password,
+    });
+
+    if (check) {
+      res.json('exist');
+    } else {
+      res.json('notexist');
+    }
+  } catch (e) {
+    res.json('fail');
+  }
+});
+app.post('/admin', async (req, res) => {
+  const { email, password } = req.body;
+  console.log(req.body);
+  try {
+    const check = await Admin.findOne({
       email: email,
       password: password,
     });
@@ -144,23 +207,47 @@ app.use('/api/routes', routes);
 // if(process.env.NODE_ENV === 'production'){
 //   app.use(express.static('frontend/build'));
 // }
-app.post("/answers", async (req, res) => {
-  const quizinfo =req.body.quizInfo;
+app.get('/api/counselors', async (req, res) => {
+  try {
+    const consultants = await Consultant.find();
+    res.json(consultants);
+  } catch (error) {
+    console.error('Error fetching consultants:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+app.post('/api/counselors/approval', async (req, res) => {
+  const { email } = req.body;
+  console.log(email);
+  try {
+    const counselor = await Consultant.findOne({ email });
+    console.log(email);
+    if (!counselor) {
+      return res.status(404).json({ error: 'Counselor not found' });
+    }
+
+    res.json({ isApproved: counselor.isApproved });
+  } catch (error) {
+    console.error('Error checking counselor approval status:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+app.post('/answers', async (req, res) => {
+  const quizinfo = req.body.quizInfo;
 
   const data = {
     quizinfo: quizinfo,
   };
 
   console.log(data);
-  try{
-    await col2.insertMany([data])
-      .catch((e) => {
-        alert("wrong details");
-        console.log(e);
-      });
-  } catch(e)
-  {
-    res.json("fail");
+  try {
+    await col2.insertMany([data]).catch((e) => {
+      alert('wrong details');
+      console.log(e);
+    });
+  } catch (e) {
+    res.json('fail');
   }
 });
 
