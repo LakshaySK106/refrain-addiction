@@ -21,7 +21,7 @@ function Landing() {
                     >
                       <div className="flex">
                         <img src={sbIcon} width={45} alt="" />
-                        <a href="/" className=" mt-2 mx-2 text-4xl font-bold">
+                        <a href="https://breadsbangalore.org/" className=" mt-2 mx-2 text-4xl font-bold">
                           Refrain Addiction
                         </a>
                       </div>
@@ -80,20 +80,20 @@ function Landing() {
                         </ul>
                       </li>
                       <li>
-                        <a href="#">Contact Us</a>
+                        <a href="https://breadsbangalore.org/">Contact Us</a>
                       </li>
                       <li className="icons">
-                        <a href="#" className="face-bk">
+                        <a href="https://breadsbangalore.org/" className="face-bk">
                           <span className="fa fa-facebook" aria-hidden="true" />
                         </a>
                       </li>
                       <li className="icons">
-                        <a href="#" className="twitter">
+                        <a href="https://breadsbangalore.org/" className="twitter">
                           <span className="fa fa-twitter" aria-hidden="true" />
                         </a>
                       </li>
                       <li className="icons">
-                        <a href="#" className="dribble">
+                        <a href="https://breadsbangalore.org/" className="dribble">
                           <span className="fa fa-dribbble" />
                         </a>
                       </li>
@@ -685,7 +685,7 @@ function Landing() {
                         <a href="services.html">Services</a>
                       </li>
                       <li className="mt-3">
-                        <a href="contact.html">Contact Us</a>
+                        <Link to="https://breadsbangalore.org/">Contact Us</Link>
                       </li>
                     </ul>
                   </div>
