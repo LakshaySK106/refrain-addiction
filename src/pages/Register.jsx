@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import axios from "axios"
 import { useNavigate, Link } from "react-router-dom"
+import useSharedStore from './Store';
 
 function Register() {
     const history=useNavigate();
@@ -10,6 +11,7 @@ function Register() {
     const [city,setCity]=useState('')
     const [college,setCollege]=useState('')
     const [password,setPassword]=useState('')
+    const setSharedData = useSharedStore((state) => state.setSharedData);
 
     async function submit(e){
         e.preventDefault();
@@ -23,7 +25,8 @@ function Register() {
                     alert("User already exists")
                 }
                 else if(res.data==="notexist"){
-                    history("/home",{state:{id:email}})
+                    setSharedData(email);
+                    history("/home")
                 }
             })
             .catch(e=>{

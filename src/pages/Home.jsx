@@ -9,15 +9,13 @@ import moji5 from "../assets/comments__bubble-avatar-3.png"
 import moji6 from "../assets/comments__bubble-avatar-4.png"
 
 function Home() {
+  
   return (
-    <>
-    
       <div className='flex'>
           <div className='h-screen sticky top-0'>
             < Sidebar />
           </div>
           <div style={{ position:"relative" , width: "800px", paddingTop:"4px", margin:"auto"  }}>
-
             <section class="hero">
             <img
               class="hero__image"
@@ -292,7 +290,6 @@ function Home() {
 
             </div>
         </div >
-    </>
   )
 }
 

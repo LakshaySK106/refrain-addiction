@@ -126,12 +126,12 @@ const Sidebar = () => {
                 Chat with Me
               </NavLink>
             </li>
-            <li className="hover:text-blue-600 hover:font-medium ">
+            {/* <li className="hover:text-blue-600 hover:font-medium ">
               <NavLink to={"/track"} className="link">
                 <BsGraphUpArrow size={23} className="min-w-max" />
                 Analytics
               </NavLink>
-            </li >
+            </li > */}
             {(open || isTabletMid) && (
               <div className="border-y py-4 border-slate-300 ">
                 <small className="pl-3 text-slate-500 inline-block mb-2">

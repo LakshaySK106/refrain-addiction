@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './App.css';
-import { sbIcon } from '../assets';
+import { sbIcon,client1,client2,client3,confi } from '../assets';
 
 function Landing() {
   return (
@@ -20,8 +20,8 @@ function Landing() {
                       href="index.html"
                     >
                       <div className="flex">
-                        <img src={sbIcon} width={35} alt="" />
-                        <a href="/" className="mx-2 mt-2">
+                        <img src={sbIcon} width={45} alt="" />
+                        <a href="/" className=" mt-2 mx-2 text-4xl font-bold">
                           Refrain Addiction
                         </a>
                       </div>
@@ -34,14 +34,14 @@ function Landing() {
                       <span className="fa fa-bars" aria-hidden="true" />
                     </label>
                     <input type="checkbox" id="drop" />
-                    <ul className="menu">
+                    <ul className="menu mt-3">
                       <li className="">
                         <Link to="/">Home</Link>
                       </li>
                       <li>
-                        <Link to="/consultant">
-                          <button className="btn btn-blue">
-                            Log in as Counselor
+                        <Link to="/loginc">
+                          <button className="menu">
+                            LOGIN AS COUNCELOR
                           </button>{' '}
                         </Link>
                       </li>
@@ -317,7 +317,7 @@ function Landing() {
                 <img src="images/vk1.jpeg" alt="" className="img-fluid" />
               </div>
               <div className="col-lg-4 content-right">
-                <h5 className="mt-1">Trut Us</h5>
+                <h5 className="mt-1 text-xl">Trust Us</h5>
                 <h4>We will help to find health, to everyone.</h4>
                 <p className="mt-2 text-left">
                   Overcoming drug addiction can significantly improve your
@@ -401,10 +401,10 @@ function Landing() {
               />
               <label htmlFor="tab3">Porn </label>
 
-              <section id="content1" className="inner-w3layouts-wrap">
+              <section id="content1" className="inner-w3layouts-wrap ">
                 <div className="row part-grids text-center inner-sec-w3ls d-flex justify-content-center">
-                  <div className="col-md-6 partgrid2">
-                    <div className="thumbnail card">
+                  <div className="col-md-6 partgrid2 ">
+                    <div className="thumbnail cardd">
                       <div className="img-event">
                         <img
                           className="img-fluid"
@@ -413,7 +413,7 @@ function Landing() {
                           style={{ margin: 'auto' }}
                         />
                       </div>
-                      <div className="caption card-body p-md-4">
+                      <div className="caption cardd-body p-md-4">
                         <h4 className="mb-4 editContent">Natural Drugs</h4>
                         <p>
                           Natural drugs are derived from substances found in
@@ -427,7 +427,7 @@ function Landing() {
                     </div>
                   </div>
                   <div className="col-md-6 partgrid1">
-                    <div className="thumbnail card">
+                    <div className="thumbnail cardd">
                       <div className="img-event">
                         <img
                           className="img-fluid"
@@ -436,7 +436,7 @@ function Landing() {
                           style={{ margin: 'auto' }}
                         />
                       </div>
-                      <div className="caption card-body p-md-4">
+                      <div className="caption cardd-body p-md-4">
                         <h4 className="mb-4 editContent">Synthetic Drug</h4>
                         <p>
                           Synthetic drugs are artificially created in
@@ -456,7 +456,7 @@ function Landing() {
               <section id="content2" className="inner-w3layouts-wrap">
                 <div className="row part-grids text-center">
                   <div className="col-md-6 partgrid2 d-flex justify-content-center">
-                    <div className="thumbnail card">
+                    <div className="thumbnail cardd">
                       <div className="img-event">
                         <img
                           className="img-fluid"
@@ -465,7 +465,7 @@ function Landing() {
                           style={{ margin: 'auto' }}
                         />
                       </div>
-                      <div className="caption card-body p-md-4">
+                      <div className="caption cardd-body p-md-4">
                         <h4 className="mb-4 editContent">Social Media</h4>
                         <p>
                           Social media addiction is a pervasive issue
@@ -478,7 +478,7 @@ function Landing() {
                     </div>
                   </div>
                   <div className="col-md-6 partgrid1 d-flex justify-content-center">
-                    <div className="thumbnail card">
+                    <div className="thumbnail cardd">
                       <div className="img-event">
                         <img
                           className="img-fluid"
@@ -487,7 +487,7 @@ function Landing() {
                           style={{ margin: 'auto' }}
                         />
                       </div>
-                      <div className="caption card-body p-md-4">
+                      <div className="caption cardd-body p-md-4">
                         <h4 className="mb-4 editContent">
                           Technology Dependency
                         </h4>
@@ -507,7 +507,7 @@ function Landing() {
               <section id="content3" className="inner-w3layouts-wrap">
                 <div className="row part-grids text-center">
                   <div className="col-md-12 partgrid d-flex justify-content-center">
-                    <div className="thumbnail card">
+                    <div className="thumbnail cardd">
                       <div className="img-event">
                         <img
                           className="img-fluid"
@@ -516,7 +516,7 @@ function Landing() {
                           style={{ margin: 'auto' }}
                         />
                       </div>
-                      <div className="caption card-body p-md-4">
+                      <div className="caption cardd-body p-md-4">
                         <h4 className="mb-4 editContent">Porn</h4>
                         <p>
                           Porn addiction is a complex issue that affects
@@ -542,7 +542,7 @@ function Landing() {
           <div className="container py-md-5">
             <div className="row banner-grids mb-lg-5">
               <div className="col-lg-6 content-right pt-md-4">
-                <h5 className="mt-1">Privacy and Confidentiality</h5>
+                <h5 className="mt-1 font-bold text-2xl">Privacy and Confidentiality</h5>
                 <p className="mt-2 text-left">
                   We prioritize the privacy and confidentiality of our visitors.
                   Any personal information collected on our website is handled
@@ -567,7 +567,7 @@ function Landing() {
                 </ul>
               </div>
               <div className="col-lg-6 content-left">
-                <img src="images/lab.jpeg" alt="" className="img-fluid" />
+                <img src={confi} alt="" className="img-fluid" />
               </div>
             </div>
           </div>
@@ -581,12 +581,27 @@ function Landing() {
             </div>
             <div className="test-content">
               <div className="testimonials_grid">
-                <span className="fa fa-quote-left" aria-hidden="true" />
-                <p className="sub-test editContent">great website</p>
-                <div className="testi_grid">
-                  <img src="images/c1.jpeg" alt=" " className="img-fluid" />
+                <div className='flex justify-center mb-4'>
+                  <span className="fa fa-quote-left mr-2" aria-hidden="true" />
+                <p className="sub-test editContent">Great website! I would recommend it to all my friends who are seeking for help :P</p>
+                <span className="fa fa-quote-right ml-2" aria-hidden="true" />
+                </div>
+
+                <div className='flex'>
+                  <div className="testi_grid mr-4">
+                  <img src={client1} alt=" " className="img-fluid h-40 w-40 mx-2" />
                   <h5>Thomas Carl</h5>
-                  <label>Description </label>
+                  <label>I used this website to overcome my addiction of consuming alcohol. </label>
+                </div>
+                <div className="testi_grid mr-4 ">
+                  <img src={client2} alt=" " className="img-fluid h-40 w-40 ml-3" />
+                  <h5>Lana Del Ray</h5>
+                  <label>This website boosted my confidence and motivated me to overcome my addiction.</label>
+                </div><div className="testi_grid gap-8">
+                  <img src={client3} alt=" " className="img-fluid h-40 w-40" />
+                  <h5>Ana De armas</h5>
+                  <label>I used this website to overcome my addiction of consuming alcohol. </label>
+                </div>
                 </div>
               </div>
             </div>
