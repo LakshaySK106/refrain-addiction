@@ -2,11 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Sidebar } from '../components';
 import axios from 'axios';
 import divider from '../assets/divider.svg'
-import { Link } from 'react-router-dom';
 import useSharedStore from './Store';
-import client1 from '../assets/client1.png'
-import { click } from '@testing-library/user-event/dist/click';
-import { client2, client3 } from '../assets';
+import { client3 } from '../assets';
 
 function Profile() {
 

@@ -39,7 +39,7 @@ const AdminDashboard = () => {
       <div className='mx-auto'>
         <table>
         <thead>
-          <tr className='flex'>
+          <tr className='flex ml-4'>
             <th className='text-xl mt-8 mr-44'>Name</th>
             <th className='text-xl mt-8 mr-44'>Specialty</th>
             <th className='text-xl mt-8 mr-44'>Approval Status</th>
@@ -50,11 +50,11 @@ const AdminDashboard = () => {
           {counselors.map((counselor) => (
             <tr className='' key={counselor._id}>
               {console.log(counselor._id)}
-              <div className='flex flex-row mt-4'>
+              <div className='grid grid-cols-4 gap-4w mt-4 px-2 py-2 h-16'>
               <td className='  mt-2'>{counselor.name}</td>
-              <td className='  ml-40 mt-2'>{counselor.speciality}</td>
-              <td className=' ml-52 mt-2'>{counselor.isApproved ? 'Approved' : 'Pending Approval'}</td>
-              <td className='ml-48 '>
+              <td className=' mt-2'>{counselor.speciality}</td>
+              <td className='  mt-2'>{counselor.isApproved ? 'Approved' : 'Pending Approval'}</td>
+              <td className=''>
                 {!counselor.isApproved && (
                   <button className=' bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded' onClick={() => handleApproveCounselor(counselor._id)}>
                     Approve

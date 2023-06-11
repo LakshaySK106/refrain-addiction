@@ -31,8 +31,9 @@ const consultantSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  Age: {
+  age: {
     type: String,
+    required: true,
   },
   speciality: {
     type: String,
@@ -137,7 +138,7 @@ app.post('/', async (req, res) => {
 });
 app.post('/consultant', async (req, res) => {
   const { email, password } = req.body;
-  console.log(req.body);
+
   try {
     const check = await Consultant.findOne({
       email: email,
@@ -155,7 +156,7 @@ app.post('/consultant', async (req, res) => {
 });
 app.post('/admin', async (req, res) => {
   const { email, password } = req.body;
-  console.log(req.body);
+
   try {
     const check = await Admin.findOne({
       email: email,
@@ -254,12 +255,27 @@ app.get("/api/userss", async (req, res) => {
 });
 
 
+
+
+app.get("/api/usrs", async (req, res) => {
+  try {
+    const youser = await collection.find();
+    res.json(youser);
+  } catch (error) {
+    console.error("Error fetching users:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
+
+
+
 app.post('/api/counselors/approval', async (req, res) => {
   const { email } = req.body;
-  console.log(email);
+
   try {
     const counselor = await Consultant.findOne({ email });
-    console.log(email);
+
     if (!counselor) {
       return res.status(404).json({ error: 'Counselor not found' });
     }
@@ -287,7 +303,6 @@ app.post('/answers', async (req, res) => {
     quizinfo: quizinfo,
   };
 
-  console.log(data);
   try {
     await col2.insertMany([data]).catch((e) => {
       alert('wrong details');
