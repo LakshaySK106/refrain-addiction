@@ -38,9 +38,8 @@ function Assessment() {
                     <p className="text-gray-600 text-center">Choose what suits the most to you</p>
                   </div>
                   <div className="space-y-1">
-                    {/* <Link to = "/drugs"><button className="p-3 bg-white border rounded-full w-full font-semibold hover:bg-black hover:text-white mb-4 " value="drugs" onClick={(e) => { setAddiction( addiction => e.target.value)}}>Drugs</button></Link>  */}
-
-                     <button className="p-3 bg-white border rounded-full w-full font-semibold hover:bg-black hover:text-white mb-4 " value="drugs" onClick={(e) => { setAddiction( addiction => e.target.value)}}>Drugs</button>
+                  
+                     <button className="p-3 mb-4 border rounded-full w-full font-semibold hover:bg-black hover:text-white " value="drugs" onClick={(e) => { setAddiction( addiction => e.target.value)}}>Drugs</button>
 
                     
                     <button className="p-3 bg-white border rounded-full w-full font-semibold hover:bg-black hover:text-white mb-4 " value="devices" onClick={(e) => { setAddiction(addiction => e.target.value) }}>Devices</button>
