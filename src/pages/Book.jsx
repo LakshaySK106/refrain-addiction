@@ -3,21 +3,32 @@ import { Sidebar } from '../components';
 import ConsultantCard from '../components/ConsultantCard';
 import { usricon } from '../assets';
 import axios from 'axios';
+import useSharedStore from './Store';
 function Book() {
   const [consultants, setConsultants] = useState([]);
   const [selectedConsultant, setSelectedConsultant] = useState(null);
+  const [selectedConsultantName, setSelectedConsultantName] = useState(null);
+
   const [bookingSuccess, setBookingSuccess] = useState(false);
-  const handleConsultantSelect = (consultantId) => {
+  const email = useSharedStore((state) => state.sharedData);
+  console.log('EMAIL' + email);
+  const handleConsultantSelect = (consultantId, consultantName) => {
     setSelectedConsultant(consultantId);
+    setSelectedConsultantName(consultantName);
   };
   const handleBookAppointment = async () => {
+    if (!email) {
+      alert('Please Login First');
+      return;
+    }
     try {
       // Make an API call to book the appointment
       const response = await axios.post(
         'http://localhost:8000/api/appointments/book',
         {
-          userId: 'user-id', // Replace with the actual user ID
+          mail: email, // Replace with the actual user ID
           consultantId: selectedConsultant,
+          consultantName: selectedConsultantName,
         },
       );
       setBookingSuccess(true);
@@ -70,7 +81,11 @@ function Book() {
           <div className="grid grid-cols-3 gap-4">
             {consultants.map((consultant) => (
               <>
-                <button onClick={() => handleConsultantSelect(consultant._id)}>
+                <button
+                  onClick={() =>
+                    handleConsultantSelect(consultant._id, consultant.name)
+                  }
+                >
                   <ConsultantCard
                     key={consultant.id}
                     photo={consultant.photo}

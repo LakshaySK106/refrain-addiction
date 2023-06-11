@@ -41,6 +41,28 @@ function Dashboard() {
 
     handleCheckApproval();
   }, []);
+
+  const handleGenerateMeetingCode = async (mail) => {
+    try {
+      const response = await axios.patch(
+        `http://localhost:8000/api/appointments/meeting`,
+        {
+          mail,
+        },
+      );
+
+      setAppointmentRequests((prevRequests) =>
+        prevRequests.map((request) =>
+          request._id === response.data.appointment._id
+            ? response.data.appointment
+            : request,
+        ),
+      );
+    } catch (error) {
+      console.error('Error generating meeting code:', error);
+    }
+  };
+
   return (
     <div>
       {isApproved ? (
@@ -48,7 +70,19 @@ function Dashboard() {
           <h1>Welcome to the Counselor Dashboard!</h1>
           <ul>
             {appointmentRequests.map((request) => (
-              <li key={request._id}>User ID: {request.userId}</li>
+              <li key={request._id}>
+                <strong>Email ID:</strong> {request.mail}
+                {console.log(request)}
+                {request.meetId ? (
+                  <span> | Meeting ID: {request.meetId}</span>
+                ) : (
+                  <button
+                    onClick={() => handleGenerateMeetingCode(request.mail)}
+                  >
+                    Generate Meeting Code
+                  </button>
+                )}
+              </li>
             ))}
           </ul>
         </div>

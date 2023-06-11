@@ -1,9 +1,9 @@
-require("dotenv").config();
-const express = require("express");
-const {collection, col2} = require("./mongo");
-const routes = require("./routes/routes");
-const cors = require("cors");
-
+require('dotenv').config();
+const express = require('express');
+const { collection, col2 } = require('./mongo');
+const routes = require('./routes/routes');
+const cors = require('cors');
+const shortid = require('shortid');
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -60,12 +60,17 @@ const adminSchema = new mongoose.Schema({
   },
 });
 const appointmentSchema = new mongoose.Schema({
-  userId: {
+  mail: {
     type: String,
 
     required: true,
   },
   consultantId: {
+    type: String,
+    ref: 'Consultant',
+    required: true,
+  },
+  consultantName: {
     type: String,
     ref: 'Consultant',
     required: true,
@@ -206,7 +211,7 @@ app.post('/register', async (req, res) => {
     city: city,
     college: college,
     password: password,
-    addiction: "",
+    addiction: '',
   };
 
   try {
@@ -255,8 +260,8 @@ app.post('/api/counselors/approval', async (req, res) => {
 });
 app.get('/api/appointments/requests', async (req, res) => {
   try {
-    const appointmentRequests = await Appointment.find({ meetId: null });
-
+    const appointmentRequests = await Appointment.find();
+    console.log();
     res.json(appointmentRequests);
   } catch (error) {
     console.error('Error fetching appointment requests:', error);
@@ -282,13 +287,14 @@ app.post('/answers', async (req, res) => {
 });
 // Book appointment route
 app.post('/api/appointments/book', async (req, res) => {
-  const { userId, consultantId } = req.body;
+  const { mail, consultantId, consultantName } = req.body;
 
   try {
     // Save the appointment data to the database
     const appointment = new Appointment({
-      userId,
+      mail,
       consultantId,
+      consultantName,
       meetId: null,
     });
     await appointment.save();
@@ -299,37 +305,93 @@ app.post('/api/appointments/book', async (req, res) => {
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
+const generateUniqueMeetingCode = async () => {
+  const meetingCode = shortid.generate();
+  try {
+    const app = await Appointment.findOne({ meetId: meetingCode });
+    if (!app) {
+      return meetingCode;
+    }
+  } catch (e) {
+    console.error('ID exists', e);
+  }
+};
+app.patch('/api/appointments/meeting', async (req, res) => {
+  const { mail } = req.body;
+  console.log('EMAIL' + mail);
+  try {
+    const meetingCode = await generateUniqueMeetingCode();
+    console.log(meetingCode);
+    const appointment = await Appointment.findOne({ mail: mail });
+    console.log(appointment);
+    if (!appointment) {
+      return res.status(404).json({ error: 'Appointment not found' });
+    }
 
+    appointment.meetId = meetingCode;
+    await appointment.save();
 
+    res.json({ message: 'Meeting code generated successfully', appointment });
+  } catch (error) {
+    console.error('Error generating meeting code:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+app.get('/api/appointments/user/:emailId', async (req, res) => {
+  const mail = req.params.emailId;
+  console.log(mail);
+  try {
+    const appointments = await Appointment.find({ mail: mail });
+    console.log(appointments);
+    // add consultant name in appointments by finding consultant name from consultant database using id
+    // const consultant = await Consultant.findById(appointments.consultantId);
+    // appointments.consultantName = consultant.name;
+    // console.log(appointments);
 
+    res.json({ appointments });
+  } catch (error) {
+    console.error('Error fetching appointments:', error);
+    res.status(500).json({ error: 'Failed to fetch appointments' });
+  }
+});
+app.get('/api/consultants/:consultantId', async (req, res) => {
+  const consultantId = req.params.consultantId;
 
+  try {
+    const consultant = await Consultant.findById(consultantId);
 
-app.post("/drugtype", async (req, res) => {
-  const { email, addiction} = req.body;
+    if (!consultant) {
+      return res.status(404).json({ error: 'Consultant not found' });
+    }
+
+    res.json({ consultant });
+  } catch (error) {
+    console.error('Error fetching consultant details:', error);
+    res.status(500).json({ error: 'Failed to fetch consultant details' });
+  }
+});
+app.post('/drugtype', async (req, res) => {
+  const { email, addiction } = req.body;
 
   const data = {
     email: email,
-    addiction: addiction
+    addiction: addiction,
   };
 
   try {
     const check = await collection.findOne({ email });
-    if(!check){
-      return res.status(404).json({ error: "Document not found" });
+    if (!check) {
+      return res.status(404).json({ error: 'Document not found' });
     }
     const result = await collection.updateOne(
       { _id: check._id },
-      { $set: { addiction } }
+      { $set: { addiction } },
     );
-    res.json({ message: "Document updated successfully" });
-  
-  }catch (e) {
-    res.json("fail");
+    res.json({ message: 'Document updated successfully' });
+  } catch (e) {
+    res.json('fail');
   }
 });
-
-
-
 
 app.listen(8000, () => {
   console.log('Port Connected!');
