@@ -130,10 +130,14 @@ const Drugs = () => {
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
       <div className="w-full max-w-md mx-auto bg-white p-4 rounded shadow-lg">
+       
         {currentQuestion < questions.length ? (
           renderQuestion()
         ) : (
           <Link to = "/drugSupp">
+             <div className='text-xl font-bold mb-6'>
+            Your Quiz has been completed. Click on Submit button to see your score.
+        </div>
             <button className="w-full bg-black hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={handleSubmit}>
               Submit
             </button>

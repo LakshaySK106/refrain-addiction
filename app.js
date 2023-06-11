@@ -1,8 +1,9 @@
-require('dotenv').config();
-const express = require('express');
-const { collection, col2 } = require('./mongo');
-const routes = require('./routes/routes');
-const cors = require('cors');
+require("dotenv").config();
+const express = require("express");
+const {collection, col2} = require("./mongo");
+const routes = require("./routes/routes");
+const cors = require("cors");
+
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -205,6 +206,7 @@ app.post('/register', async (req, res) => {
     city: city,
     college: college,
     password: password,
+    addiction: "",
   };
 
   try {
@@ -297,6 +299,37 @@ app.post('/api/appointments/book', async (req, res) => {
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
+
+
+
+
+
+app.post("/drugtype", async (req, res) => {
+  const { email, addiction} = req.body;
+
+  const data = {
+    email: email,
+    addiction: addiction
+  };
+
+  try {
+    const check = await collection.findOne({ email });
+    if(!check){
+      return res.status(404).json({ error: "Document not found" });
+    }
+    const result = await collection.updateOne(
+      { _id: check._id },
+      { $set: { addiction } }
+    );
+    res.json({ message: "Document updated successfully" });
+  
+  }catch (e) {
+    res.json("fail");
+  }
+});
+
+
+
 
 app.listen(8000, () => {
   console.log('Port Connected!');

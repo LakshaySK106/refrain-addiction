@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 import { FaComment, FaQuestionCircle } from 'react-icons/fa';
 
 function Support2() {
-  const min = 30;
-  const max = 80;
+  const min = 1;
+  const max = 10;
   const score = Math.floor(Math.random() * (max - min) + min);
 
   return (
     <div className="flex flex-col justify-center items-center h-screen">
-      <div className="text-2xl font-semibold mb-8">Yay! Your score is: {score}</div>
+      <div className="text-2xl font-semibold mb-8">Yay! Your level is: {score}</div>
 
       <div className="flex flex-wrap justify-center">
         <Link to="/chat">

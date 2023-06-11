@@ -7,24 +7,15 @@ import moji1 from '../assets/comments__bubble-avatar-1.png';
 import moji3 from '../assets/comments__bubble-avatar-2.png';
 import moji5 from '../assets/comments__bubble-avatar-3.png';
 import moji6 from '../assets/comments__bubble-avatar-4.png';
-import { useLocation } from 'react-router-dom';
-function Home() {
-  const email = useLocation().state?.id;
+
+function Home() {  
   return (
-    <>
-      <div className="flex">
-        <div className="h-screen sticky top-0">
-          <Sidebar email={email} />
-        </div>
-        <div
-          style={{
-            position: 'relative',
-            width: '800px',
-            paddingTop: '4px',
-            margin: 'auto',
-          }}
-        >
-          <section class="hero">
+      <div className='flex'>
+          <div className='h-screen sticky top-0'>
+            < Sidebar />
+          </div>
+          <div style={{ position:"relative" , width: "800px", paddingTop:"4px", margin:"auto"  }}>
+            <section class="hero">
             <img
               class="hero__image"
               src="./images/hero__image.svg"
@@ -321,11 +312,13 @@ function Home() {
                 </div>
               </article>
             </div>
+
           </section>
         </div>
       </div>
     </>
   );
+  )
 }
 
 export default Home;

@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import axios from "axios"
 import { useNavigate, Link } from "react-router-dom"
+import useSharedStore from './Store';
 
 
 function Login() {
@@ -9,10 +10,10 @@ function Login() {
 
     const [email,setEmail]=useState('')
     const [password,setPassword]=useState('')
+    const setSharedData = useSharedStore((state) => state.setSharedData);
 
     async function submit(e){
         e.preventDefault();
-
         try{
 
             await axios.post("http://localhost:8000/",{
@@ -20,7 +21,9 @@ function Login() {
             })
             .then(res=>{
                 if(res.data==="exist"){
-                    history("/home",{state:{id:email}})
+                    setSharedData(email);
+                    history("/home")
+
                 }
                 else if(res.data==="notexist"){
                     alert("Invalid Credentials!")
