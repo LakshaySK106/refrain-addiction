@@ -12,6 +12,7 @@ import {
   Login,
   Register,
   Blockweb,
+  Userdata,
 } from './pages';
 import Dashboard from './pages/Dashboard';
 import Loginc from './pages/Loginc';
@@ -55,6 +56,7 @@ function App() {
         <Route path="/consultant" element={<Consultant />} />
         <Route exact path="/dashboard" element={<Dashboard />} />
         <Route exact path="/admindashboard" element={<AdminDashboard />} />
+        <Route exact path="/userdata" element={<Userdata />} />
       </Routes>
     </div>
   );

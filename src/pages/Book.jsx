@@ -3,6 +3,9 @@ import { Sidebar } from '../components';
 import ConsultantCard from '../components/ConsultantCard';
 import { usricon } from '../assets';
 import axios from 'axios';
+import divider from '../assets/divider.svg'
+import { Link } from 'react-router-dom';
+
 function Book() {
   const [consultants, setConsultants] = useState([]);
   const [selectedConsultant, setSelectedConsultant] = useState(null);
@@ -11,6 +14,7 @@ function Book() {
     setSelectedConsultant(consultantId);
   };
   const handleBookAppointment = async () => {
+    setBookingSuccess(false);
     try {
       // Make an API call to book the appointment
       const response = await axios.post(
@@ -57,20 +61,27 @@ function Book() {
   console.log({ usricon });
   return (
     <>
-      <div className="flex gap-10">
-        <Sidebar />
-        <div className="flex flex-col gap-10">
-          <div>BOOK A NEW APPOINTMENT?</div>
+      <div className="flex">
+        <div className='h-screen sticky top-0'>
+          <Sidebar />
+        </div>
+        <div className="flex flex-col items-center mx-auto">
+          <div className='text-5xl font-bold text-blue-400 mb-10 mt-10'>BOOK A NEW APPOINTMENT?</div>
           {/* <div className="container mx-auto flex-col flex-wrap">
           {consultants.map((consultant) => (
           <li key={consultant.id}>{consultant.name}</li>
         ))}
             <ConsultantCard {...consultant} />
           </div> */}
-          <div className="grid grid-cols-3 gap-4">
+           <div class="divider__container mb-8">
+            <img class="divider" src={divider} alt="divider" />
+          </div>
+
+          <div className="grid grid-cols-3 gap-4 w-full ml-20">
             {consultants.map((consultant) => (
               <>
-                <button onClick={() => handleConsultantSelect(consultant._id)}>
+                <button onClick={() => handleConsultantSelect(consultant._id)}
+                className=' bg-blue-100 border-solid border-2 border-blue-200 rounded-2xl p-3 w-80'>
                   <ConsultantCard
                     key={consultant.id}
                     photo={consultant.photo}
@@ -83,11 +94,19 @@ function Book() {
             ))}
           </div>
           <div>
-            {selectedConsultant && <div>Booking for {selectedConsultant}</div>}
+            {selectedConsultant && <div className='text-xl' >Booking for ID: {selectedConsultant}</div>}
             {selectedConsultant && (
-              <button onClick={handleBookAppointment}>Book Appointment</button>
+              <button onClick={handleBookAppointment} className='ml-24 mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>Book Appointment</button>
             )}
-            {bookingSuccess && <p>Appointment has been booked successfully!</p>}
+            {bookingSuccess && <div className='text-green-600 text-2xl font-bold mt-10'>Appointment has been booked successfully!✨
+            <div className='text-black font-normal text-base ml-20 mt-8 mb-20'>
+              <Link to="/Appointment/past" className='text-blue-500 hover:text-blue-900 hover:underline'>
+                Click here </Link> 
+                to go to the appointment details.
+            </div>
+            
+            </div>}
+            
           </div>
         </div>
       </div>

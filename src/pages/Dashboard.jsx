@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 function Dashboard() {
   const [isApproved, setIsApproved] = useState(false);
   const [appointmentRequests, setAppointmentRequests] = useState([]);
@@ -44,21 +45,33 @@ function Dashboard() {
   return (
     <div>
       {isApproved ? (
-        <div>
-          <h1>Welcome to the Counselor Dashboard!</h1>
+        <div className='h-screen flex flex-col items-center '>
+          <h1 className='mt-14 font-bold text-4xl font-Montserrat mb-4'>Welcome to the Dashboard!</h1>
           <ul>
             {appointmentRequests.map((request) => (
               <li key={request._id}>User ID: {request.userId}</li>
             ))}
           </ul>
+          <div className='text-xl mt-4'>
+            <Link to="/" className='text-blue-500 hover:text-blue-900 hover:underline'>
+            Click here... 
+          </Link>
+            to the logout!
+          </div>
         </div>
       ) : (
-        <div>
-          <h1>Not Approved</h1>
-          <p>
+        <div className='h-screen flex flex-col items-center justify-center'>
+          <h1 className='text-red-500 font-bold text-4xl font-Montserrat mb-4'>NOT APPROVED!</h1>
+          <p className='text-black text-xl'>
             Your account is pending approval. Please wait for the administrator
             to approve your account.
           </p>
+          <div className='text-xl mt-4'>
+            <Link to="/" className='text-blue-500 hover:text-blue-900 hover:underline'>
+            Click here... 
+          </Link>
+           to return to the home page
+          </div>
         </div>
       )}
     </div>

@@ -10,6 +10,7 @@ import moji6 from '../assets/comments__bubble-avatar-4.png';
 
 function Home() {  
   return (
+    <>
       <div className='flex'>
           <div className='h-screen sticky top-0'>
             < Sidebar />
@@ -318,7 +319,6 @@ function Home() {
       </div>
     </>
   );
-  )
 }
 
 export default Home;

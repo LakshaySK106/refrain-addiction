@@ -237,6 +237,23 @@ app.get('/api/counselors', async (req, res) => {
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
+
+
+app.get("/api/userss", async (req, res) => {
+ const userEmail = req.query.email; 
+  try {
+    const user = await collection.findOne({ email: userEmail });
+    if (!user) {
+      return res.status(404).json({ error: "User not found" });
+    }
+    res.json(user);
+  } catch (error) {
+    console.error("Error fetching users:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
+
 app.post('/api/counselors/approval', async (req, res) => {
   const { email } = req.body;
   console.log(email);
