@@ -23,7 +23,7 @@ const UserAppointments = ({ userId }) => {
             <div>
               <div>
                 <span>
-                  Meeting ID: {appointment.meetingId || 'Not generated yet'}
+                  Meeting ID: {appointment.meetId || 'Not generated yet'}
                 </span>
                 <span>Consultant: {appointment.consultantName}</span>
                 <span>Time: {appointment.createdAt}</span>
