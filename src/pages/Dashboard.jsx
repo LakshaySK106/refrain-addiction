@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { Sidecounc } from '../components';
 function Dashboard() {
   const [isApproved, setIsApproved] = useState(false);
   const [appointmentRequests, setAppointmentRequests] = useState([]);
@@ -67,7 +68,14 @@ function Dashboard() {
   return (
     <div>
       {isApproved ? (
-        <div className='h-screen flex flex-col items-center '>
+
+        <>
+        <div>
+            <div className='mr-20'>
+        <Sidecounc />
+      </div>
+
+          <div className='h-screen flex flex-col items-center '>
           <h1 className='mt-14 font-bold text-4xl font-Montserrat mb-4'>Welcome to the Dashboard!</h1>
          <div className='w-1/2 mt-4'>
            <ul className='flex flex-col'>
@@ -94,6 +102,9 @@ function Dashboard() {
             to the logout!
           </div>
         </div>
+        </div>
+        
+        </>
       ) : (
         <div className='h-screen flex flex-col items-center justify-center'>
           <h1 className='text-red-500 font-bold text-4xl font-Montserrat mb-4'>NOT APPROVED!</h1>

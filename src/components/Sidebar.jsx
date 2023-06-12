@@ -123,14 +123,7 @@ const Sidebar = ({ email }) => {
               </NavLink>
             </li>
 
-            <li className="hover:text-blue-600 hover:font-medium">
-              <NavLink to={'/meet'} className="link">
-                <MdVideoCall size={23} className="min-w-max" />
-                Meet now
-              </NavLink>
-            </li>
-            {/* <li className="hover:text-blue-600 hover:font-medium ">
-
+           
 
             <li className="hover:text-blue-600 hover:font-medium ">
               <NavLink to={"/track"} className="link">
@@ -151,7 +144,13 @@ const Sidebar = ({ email }) => {
               </div>
             )}
 
-            <li className="hover:text-blue-600 hover:font-medium">
+              <li className="hover:text-blue-600 hover:font-medium">
+              <NavLink to={'/meet'} className="link">
+                <MdVideoCall size={23} className="min-w-max" />
+                Meet now
+              </NavLink>
+            </li>
+            <li className="hover:text-blue-600 hover:font-medium border-y py-4 border-slate-300">
               <NavLink to={'/'} className="link">
                 <RiLogoutBoxLine size={23} className="min-w-max" />
                 Logout

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import VideoCall from '../components/VideoCall';
-import { Sidebar } from '../components';
+import { Sidecounc } from '../components';
 function Meet() {
   const [identity, setIdentity] = useState('');
   const [roomName, setRoomName] = useState('');
@@ -32,11 +32,11 @@ function Meet() {
   };
 
   return (
-    <div className="flex gap-20">
+    <div className="flex">
       <div className='h-screen sticky top-0'>
-            < Sidebar />
+            < Sidecounc />
           </div>
-      <div className='flex flex-col w-1/2'>
+      <div className='flex flex-col w-1/2 ml-80'>
         <input className='h-20 my-12 rounded-xl px-10'
           type="text"
           placeholder="Enter your identity"

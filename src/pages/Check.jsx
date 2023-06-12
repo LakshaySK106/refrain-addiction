@@ -45,7 +45,7 @@ const UserAppointments = ({ userId }) => {
           <div className='flex flex-col items-center w-full'>
             <div className='text-lg mt-20'>
               Please copy the meeting ID and paste it here..
-              <Link to="" className='text-blue-500 hover:text-blue-800 hover:underline'>
+              <Link to="/meet" className='text-blue-500 hover:text-blue-800 hover:underline'>
                Click here
               </Link>
             </div>

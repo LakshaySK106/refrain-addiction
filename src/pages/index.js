@@ -10,3 +10,4 @@ export { default as Login } from "./Login";
 export { default as Register } from "./Register";
 export { default as Blockweb } from "./Blockweb";
 export { default as Userdata } from "./Userdata";
+export { default as MeetCounc } from "./MeetCounc";

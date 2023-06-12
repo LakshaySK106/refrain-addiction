@@ -13,6 +13,7 @@ import {
   Register,
   Blockweb,
   Userdata,
+  MeetCounc,
 } from './pages';
 import Dashboard from './pages/Dashboard';
 import Loginc from './pages/Loginc';
@@ -43,6 +44,7 @@ function App() {
         <Route path="/Appointment/past" element={<Check />} />
         <Route path="/register" element={<Register />} />
         <Route path="/meet" element={<Meet />} />
+        <Route path="/meetcs" element={<MeetCounc />} />
         <Route path="/login" element={<Login />} />
         <Route path="/adminlogin" element={<AdminLogin />} />
         <Route path="/blockweb" element={<Blockweb />} />
