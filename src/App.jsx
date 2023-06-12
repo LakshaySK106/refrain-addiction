@@ -27,6 +27,7 @@ import Support2 from './pages/Support2';
 import Consultant from './pages/Consultant';
 import AdminLogin from './pages/AdminLogin';
 import AdminDashboard from './pages/AdminDashboard';
+import Meet from './pages/Meet';
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
         <Route path="/Appointment/new" element={<Book />} />
         <Route path="/Appointment/past" element={<Check />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/meet" element={<Meet />} />
         <Route path="/login" element={<Login />} />
         <Route path="/adminlogin" element={<AdminLogin />} />
         <Route path="/blockweb" element={<Blockweb />} />
