@@ -69,15 +69,15 @@ function Dashboard() {
       {isApproved ? (
         <div className='h-screen flex flex-col items-center '>
           <h1 className='mt-14 font-bold text-4xl font-Montserrat mb-4'>Welcome to the Dashboard!</h1>
-          <ul>
+         <div className='w-1/2 mt-4'>
+           <ul className='flex flex-col'>
             {appointmentRequests.map((request) => (
-              <li key={request._id}>
-                <strong>Email ID:</strong> {request.mail}
-                {console.log(request)}
+              <li className='mb-2 grid grid-cols-3 gap-4' key={request._id}>
+                <strong className=''>Email ID:</strong> {request.mail}
                 {request.meetId ? (
-                  <span> | Meeting ID: {request.meetId}</span>
+                  <span>  Meeting ID: {request.meetId}</span>
                 ) : (
-                  <button
+                  <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded'
                     onClick={() => handleGenerateMeetingCode(request.mail)}
                   >
                     Generate Meeting Code
@@ -86,6 +86,7 @@ function Dashboard() {
               </li>
             ))}
           </ul>
+         </div>
           <div className='text-xl mt-4'>
             <Link to="/" className='text-blue-500 hover:text-blue-900 hover:underline'>
             Click here... 
