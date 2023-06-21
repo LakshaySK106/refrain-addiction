@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { Sidecounc } from '../components';
@@ -7,7 +7,7 @@ function Dashboard() {
   const [isApproved, setIsApproved] = useState(false);
   const [appointmentRequests, setAppointmentRequests] = useState([]);
 
-  const history = useNavigate();
+
   const location = useLocation();
   console.log(location.state.id);
   const email = location.state.id;
@@ -107,7 +107,7 @@ function Dashboard() {
         </>
       ) : (
         <div className='h-screen flex flex-col items-center justify-center'>
-          <h1 className='text-red-500 font-bold text-4xl font-Montserrat mb-4'>NOT APPROVED!</h1>
+          <h1 className='text-red-500 font-bold text-4xl font-Montserrat mb-4'>PENDING APPROVAL!</h1>
           <p className='text-black text-xl'>
             Your account is pending approval. Please wait for the administrator
             to approve your account.

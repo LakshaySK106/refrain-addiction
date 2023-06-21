@@ -1,17 +1,7 @@
-import { useEffect, useState } from 'react';
-import { useRef } from 'react';
-import { motion } from 'framer-motion';
-import { IoIosArrowBack } from 'react-icons/io';
 import { AiOutlineAppstore } from 'react-icons/ai';
 import { BsPerson } from 'react-icons/bs';
-import { useMediaQuery } from 'react-responsive';
-import { MdMenu } from 'react-icons/md';
-import { NavLink, useLocation } from 'react-router-dom';
-import { MdOutlineAssessment, MdChat } from 'react-icons/md';
-import { BsGraphUpArrow } from 'react-icons/bs';
+import { NavLink } from 'react-router-dom';
 import { sbIcon } from '../assets';
-import SubMenu from './SubMenu';
-import { SiHandshake } from 'react-icons/si';
 import { RiLogoutBoxLine } from 'react-icons/ri';
 
 function Sideadmin() {

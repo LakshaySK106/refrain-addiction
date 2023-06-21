@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config()
 const express = require('express');
 const { collection, col2 } = require('./mongo');
 const routes = require('./routes/routes');
@@ -12,14 +12,10 @@ const { AccessToken } = require('twilio').jwt;
 const VideoGrant = AccessToken.VideoGrant;
 const http = require('http').createServer(app);
 const mongoose = require('mongoose');
-const mongoString = 'mongodb://localhost:27017/refrain-addiction';
-mongoose.connect(
-  `mongodb+srv://refrain-addiction:codetogivehack@cluster0.yzcnusv.mongodb.net/?retryWrites=true&w=majority`,
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  },
-);
+mongoose.connect(`${process.env.MONGODB_URI}`, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 const database = mongoose.connection;
 
 database.on('error', (error) => {

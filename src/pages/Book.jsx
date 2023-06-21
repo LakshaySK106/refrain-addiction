@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Sidebar } from '../components';
 import ConsultantCard from '../components/ConsultantCard';
-import { usricon } from '../assets';
 import axios from 'axios';
 
 import useSharedStore from './Store';
@@ -68,13 +67,6 @@ function Book() {
     fetchConsultants();
   }, []);
 
-  const consultant = {
-    photo: usricon,
-    name: 'John Doe',
-    specialty: 'Psychologist',
-    age: 35,
-  };
-  console.log({ usricon });
   return (
     <>
       <div className="flex">
