@@ -67,7 +67,6 @@ function Chat() {
     }).then((data) => {
       return data.json();
     }).then((data) => {
-      console.log(data);
       setMessages([...chatMessages, {
         message: data.choices[0].message.content,
         sender: "Partner"
@@ -90,7 +89,6 @@ function Chat() {
                 typingIndicator={isTyping ? <TypingIndicator content="Partner is typing" /> : null}
               >
                 {messages.map((message, i) => {
-                  console.log(message)
                   return <Message key={i} model={message} />
                 })}
               </MessageList>

@@ -62,9 +62,8 @@ const Drugs = () => {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    console.log(quizInfo);
     try {
-      await axios.post('http://localhost:8000/answers', {
+      await axios.post('https://refrain-addiction-amitbatra31.vercel.app/answers', {
         quizInfo: Object.fromEntries(quizInfo),
       })
       .then(res=>{

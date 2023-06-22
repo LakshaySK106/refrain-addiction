@@ -9,7 +9,7 @@ const AdminDashboard = () => {
     const fetchCounselors = async () => {
       try {
         const response = await axios.get(
-          'http://localhost:8000/api/consultants',
+          'https://refrain-addiction-amitbatra31.vercel.app/api/consultants',
         );
         setCounselors(response.data);
       } catch (error) {
@@ -22,7 +22,7 @@ const AdminDashboard = () => {
 
   const handleApproveCounselor = async (id) => {
     try {
-      await axios.patch(`http://localhost:8000/api/counselors/${id}/approve`);
+      await axios.patch(`https://refrain-addiction-amitbatra31.vercel.app/api/counselors/${id}/approve`);
       setCounselors((prevCounselors) =>
         prevCounselors.filter((counselor) => counselor._id !== id),
       );

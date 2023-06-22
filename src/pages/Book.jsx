@@ -32,7 +32,7 @@ function Book() {
     try {
       // Make an API call to book the appointment
       const response = await axios.post(
-        'http://localhost:8000/api/appointments/book',
+        'https://refrain-addiction-amitbatra31.vercel.app/api/appointments/book',
         {
           mail: email, // Replace with the actual user ID
           consultantId: selectedConsultant,
@@ -52,7 +52,7 @@ function Book() {
     const fetchConsultants = async () => {
       try {
         const response = await axios.get(
-          'http://localhost:8000/api/counselors',
+          'https://refrain-addiction-amitbatra31.vercel.app/api/counselors',
         );
         const cdata = response.data;
         const filteredData = cdata.filter((counselor) => {

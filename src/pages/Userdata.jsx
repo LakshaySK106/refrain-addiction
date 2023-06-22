@@ -11,7 +11,7 @@ useEffect(() => {
     const fetchTheUsers = async () => {
       try {
         const response = await axios.get(
-          'http://localhost:8000/api/usrs',
+          'https://refrain-addiction-amitbatra31.vercel.app/api/usrs',
         );
         const udta = response.data;
         setUsrs(udta);

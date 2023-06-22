@@ -8,7 +8,7 @@ function Meet() {
   const handleJoinCall = async () => {
     if (identity && roomName) {
       try {
-        const response = await fetch('http://localhost:8000/token', {
+        const response = await fetch('https://refrain-addiction-amitbatra31.vercel.app/token', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

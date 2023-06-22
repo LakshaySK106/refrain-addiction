@@ -13,7 +13,7 @@ function LoginC() {
 
     try {
       await axios
-        .post('http://localhost:8000/consultant', {
+        .post('https://refrain-addiction-amitbatra31.vercel.app/consultant', {
           email,
           password,
         })
